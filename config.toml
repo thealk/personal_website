@@ -1,0 +1,46 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "Thea Knowles"
+theme = "ghostwriter"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[Author]
+     name = "Thea Knowles"
+     
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+[[menu.main]]
+    name = "Projects"
+    url = "/project/"
+    weight = 2
+
+[params]
+    description = "A website built through Hugo and blogdown."
+    twitter = "https://twitter.com/theaknowles"
+    github = "https://github.com/thealk"
+    linkedin = "https://www.linkedin.com/in/thea-knowles-70700b68/"
+    email = "tknowle3@uwo.ca"
+    opengraph = true
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdn.bootcss.com"
+    MathJaxVersion = "2.7.1"
+
+    [params.logo]
+    url = "TheaKnowles.jpg"
+    width = 50
+    height = 50
+    alt = "Logo"
+

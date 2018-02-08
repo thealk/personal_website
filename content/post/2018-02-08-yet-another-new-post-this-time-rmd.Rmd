@@ -1,0 +1,9 @@
+---
+title: Yet another new post, this time .Rmd
+author: ''
+date: '2018-02-08'
+slug: yet-another-new-post-this-time-rmd
+categories: []
+tags: []
+---
+
