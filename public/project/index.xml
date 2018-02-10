@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>R-Ladies #LdnOnt</title>
       <link>/project/rladies-ldnont/</link>
-      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/rladies-ldnont/</guid>
       <description>Some text about rladies</description>
@@ -24,7 +24,7 @@
     <item>
       <title>AutoVOT</title>
       <link>/project/autovot/</link>
-      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/autovot/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Praat Scripts</title>
       <link>/project/praat-scripts/</link>
-      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/praat-scripts/</guid>
       <description></description>
