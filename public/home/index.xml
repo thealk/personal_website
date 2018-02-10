@@ -6,6 +6,7 @@
     <description>Recent content in Homes on Thea Knowles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,7 @@
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
       
       <guid>/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes :rocket: Latest release  
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release  
 (function defer() { if (window.jQuery) { jQuery(document).ready(function(){ GetLatestReleaseInfo(); }); } else { setTimeout(function() { defer() }, 50); } })(); function GetLatestReleaseInfo() { $.getJSON(&#39;https://api.github.com/repos/gcushen/hugo-academic/tags&#39;).done(function (json) { let release = json[0]; // let downloadURL = release.zipball_url; $(&#39;#academic-release&#39;).text(&#39;Latest release &#39; + release.name); }); }  </description>
     </item>
     
@@ -27,7 +28,18 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/home/about/</guid>
-      <description>Biography Thea Knowles is a candidate in the combined clinical Master&amp;rsquo;s and PhD in speech-language pathology at Western University.</description>
+      <description>Biography I&amp;rsquo;m in the fourth year of a combined MClSc/PhD in Health &amp;amp; Rehabilitation Sciences at Western University in London, Ontario. I specialize in Speech &amp;amp; Language Sciences and Speech-Language Pathology.
+My research focuses on describing the acoustic-phonetic characteristics of dysarthria, a group of motor speech disorders. In particular, much of my research is centred on hypokinetic dysarthria, which is associated with Parkinson&amp;rsquo;s disease. In particular, I study how behavioural, pharmaceutical, and surgical interventions for Parkinson&amp;rsquo;s disease lead to changes in the acoustic speech signal, and how these changes modulate a typical listener&amp;rsquo;s ability to understand the spoken utterance.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/home/rladies/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/rladies/</guid>
+      <description>R-Ladies #LdnOnt R-Ladies is a global initiative with the mission of promoting gender diversity in the statistical programming community, R. Local chapters exist in cities all over the world, with the London, Ontario (#LdnOnt) chapter joining the team in January 2017.
+While my original intention was to simply join a nearby chapter, it turned out &amp;ldquo;nearby&amp;rdquo; was not really a feasible criterion, the closest being about 6 hours away. Fortunately, the R-Ladies team is an enthusiastic bunch with great online support to facilitate the start up of new chapters and thus, with the collaboration of a friend, R-Ladies #LdnOnt was born.</description>
     </item>
     
     <item>
