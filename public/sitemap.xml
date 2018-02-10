@@ -5,8 +5,35 @@
     
     <url>
     
+      <loc>/project/rladies-ldnont/</loc>
+      <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/a-new-post/</loc>
       <lastmod>2018-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/project/autovot/</loc>
+      <lastmod>2018-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/project/praat-scripts/</loc>
+      <lastmod>2018-02-09T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -59,24 +86,6 @@
     
     <url>
     
-      <loc>/project/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/project/example-external-project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/post/getting-started/</loc>
       <lastmod>2018-01-13T00:00:00-05:00</lastmod>
     </url>
@@ -104,6 +113,16 @@
     
     <url>
     
+      <loc>/tags/autovot/</loc>
+      <lastmod>2018-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
       <priority>0</priority>
     </url>
@@ -113,8 +132,8 @@
     
     <url>
     
-      <loc>/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>/tags/code/</loc>
+      <lastmod>2018-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -123,8 +142,8 @@
     
     <url>
     
-      <loc>/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>/tags/praat/</loc>
+      <lastmod>2018-02-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -134,7 +153,17 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/r-ladies/</loc>
+      <lastmod>2018-02-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
