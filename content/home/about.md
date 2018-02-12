@@ -12,7 +12,8 @@ weight = 5
   interests = [
     "Motor speech disorders",
     "Speech acoustics",
-    "Speech intelligibility"
+    "Speech intelligibility",
+    "Speech measurement tools"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -27,8 +28,12 @@ weight = 5
  
 +++
 
-# Biography
+# About me
 
-I'm in the fourth year of a combined MClSc/PhD in Health & Rehabilitation Sciences at Western University in London, Ontario. I specialize in Speech & Language Sciences and Speech-Language Pathology.
+I am a candidate in the [combined MClSc/PhD](http://www.uwo.ca/fhs/csd/programs/combined.html) in Communication Sciences & Disorders (Speech-Language Pathology) at [Western University](http://uwo.ca/) in London, Ontario. My research focuses on describing the acoustic-phonetic characteristics of dysarthria, a group of motor speech disorders. In particular, I am interested in how changes in the acoustic speech signal modulate *speech intelligibility*, that is, how understandable one's speech is to a typical listener. Informed by my background in linguistics and speech acoustics, my research can broadly be categorized into three themes: 
 
-My research focuses on describing the acoustic-phonetic characteristics of dysarthria, a group of motor speech disorders. In particular, much of my research is centred on hypokinetic dysarthria, which is associated with Parkinson's disease. In particular, I study how behavioural, pharmaceutical, and surgical interventions for Parkinson's disease lead to changes in the acoustic speech signal, and how these changes modulate a typical listener's ability to understand the spoken utterance.
+1. Understanding variable and adverse treatment effects on speech intelligibility
+2. Acoustic distinctiveness and its role in speech intelligibliity
+3. The use of technology for speech measurement and treatment
+
+While much of my research has focused on hypokinetic dysarthria, a motor speech disorder associated with Parkinson's disease, I am also interested in the differential speech processes in younger and older healthy adults, as well as individuals with cerebellar damage. 

@@ -9,7 +9,7 @@ title = "Recent Posts"
 subtitle = "Not much here yet, but wait for it!"
 
 # Order that this section will appear in.
-weight = 40
+weight = 50
 
 # Filter posts by tag.
 #  By default, show all recent posts.

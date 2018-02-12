@@ -51,11 +51,11 @@ defaultContentLanguageInSubdir = false
 
   # Your details.
   name = "Thea Knowles"
-  role = "MClSc/PhD candidate in speech-language pathology"
+  role = "MClSc/PhD candidate in Communication Sciences & Disorders (Speech-Language Pathology)"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Western University", url = "www.uwo.ca" } ]
+  organizations = [ { name = "Western University", url = "http://www.uwo.ca" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "TheaKnowles.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
@@ -218,11 +218,11 @@ defaultContentLanguageInSubdir = false
     icon = "envelope"
     icon_pack = "fa"
     link = "mailto:tknowle3@uwo.ca"
-
+    
   [[params.social]]
-    icon = "twitter"
-    icon_pack = "fa"
-    link = "//twitter.com/theaknowles"
+    icon = "researchgate"
+    icon_pack = "ai"
+    link = "https://www.researchgate.net/profile/Thea_Knowles2"
 
   [[params.social]]
     icon = "google-scholar"
@@ -238,6 +238,11 @@ defaultContentLanguageInSubdir = false
     icon = "linkedin"
     icon_pack = "fa"
     link = "https://www.linkedin.com/in/thea-knowles-70700b68/"
+    
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/theaknowles"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
@@ -254,13 +259,13 @@ defaultContentLanguageInSubdir = false
 
 [[menu.main]]
   name = "CV"
-  url = "#cv"
-  weight = 3
-
-[[menu.main]]
-  name = "R-Ladies #LdnOnt"
-  url = "#rladies"
+  url = "../files/cv/KnowlesCV_academic_2017.pdf"
   weight = 2
+
+#[[menu.main]]
+#  name = "R-Ladies #LdnOnt"
+#  url = "#rladies"
+#  weight = 2
 
 #[[menu.main]]
 #  name = "Publications"
@@ -268,13 +273,13 @@ defaultContentLanguageInSubdir = false
 #  weight = 3
 
 [[menu.main]]
-  name = "Posts"
-  url = "#posts"
+  name = "Projects"
+  url = "#projects"
   weight = 3
 
 [[menu.main]]
-  name = "Projects"
-  url = "#projects"
+  name = "Posts"
+  url = "#posts"
   weight = 4
 
 #[[menu.main]]

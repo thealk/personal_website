@@ -18,28 +18,8 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/reflection-a-year-of-r-ladies-ldnont/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A new post</title>
-      <link>/post/a-new-post/</link>
-      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/a-new-post/</guid>
-      <description>Nothing here yet!</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>Academic is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. Check out the latest demo of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the Quick Start guide or take a look at the Release Notes.
-
-Key features:
- Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
+      <description>R-Ladies, #LdnOnt just recently celebrated its one-year anniversary 🎉. As such, I thought it time to share my thoughts on the community we’ve found and the things we’ve learned. In case reading through a post of ramblings isn’t your style/you ain’t got time for that, here are some key learnings:
+tl;dr:  👊 If you are thinking of starting up a similar group, don’t let the mind games get you down!</description>
     </item>
     
   </channel>

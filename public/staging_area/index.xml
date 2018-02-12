@@ -18,8 +18,20 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/staging_area/reflection-a-year-of-r-ladies/</guid>
-      <description>In October 2016, I came across this post and felt a small surge of excitement. A group of women with a shared mission of learning and exchanging R-based skills together.
-Learning R Preface: This started out as an attempt to reflect on our first year of R-Ladies, London Ontario. What began as an opening sentence to set the context of why I pursued it in the first place accidently exploded (potato-in-microwave-style) into its own post.</description>
+      <description>Learning R Preface: This started out as an attempt to reflect on our first year of R-Ladies, London Ontario. What began as an opening sentence to set the context of why I pursued it in the first place accidently exploded (potato-in-microwave-style) into its own post. Oops.
+tl;dr:  If at first you feel like a n00b, that’s okay! What can feel like a steep learning curve is surmountable by a combination of the following: A mountain of exemplars (i.</description>
+    </item>
+    
+    <item>
+      <title>Academic: the website designer for Hugo</title>
+      <link>/staging_area/getting-started/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/staging_area/getting-started/</guid>
+      <description>Academic is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. Check out the latest demo of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the Quick Start guide or take a look at the Release Notes.
+
+Key features:
+ Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
     </item>
     
   </channel>
