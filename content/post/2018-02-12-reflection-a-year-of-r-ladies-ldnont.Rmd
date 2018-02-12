@@ -84,7 +84,7 @@ Nevertheless, we sent out an online survey, got more responses, maintained a lev
 [^3]: RStudio also provided us with generous financial funding at the start of this year as well. `r emo::ji("heart_eyes")` Thank you! `r emo::ji("heart_eyes")`
 
 <center>
-![img](../../static/img/growth.png)
+![img](/img/growth.png)
 </center>
 
 
@@ -95,7 +95,7 @@ Early on in our process, Sally and I had decided that it was important to us to 
 This move of course did come with potential costs: the majority of our attendees *were* university students, and campus meetups would have been easier for many of them to attend. To offset this, we tried to time our meetups to occur slightly later in the day, allowing people time to finish up their work and head downtown. Despite this potential drawback, we agreed that open membership beyond the university bubble was more important than the convenience that meeting on campus provided. We finished out the remainder of our first six months of the chapter with UnLondon, and took a summer hiatus. 
 
 <center>
-![img](../../static/img/meetupGroup.jpg)
+![img](/img/meetupGroup.jpg)
 </center>
 
 During this time, we had also been poking around at other community partnerships. One thought was to hold events at UnLondon, and co-working sessions at the public library. When we reconvened in September, UnLondon was getting ready to undergo some structural changes, and the library had been very eager to bring our group in. We made yet another shift at this point, deciding to move all our future meetups to the [London Public Library](http://www.londonpubliclibrary.ca) `r emo::ji("classical_building")`. This wound up being a wonderful decision, and we remain very grateful for the opportunities the library has provided us. We also made some organizational changes, moving our meetups to the same time and day each month. **Consistency in meetup times and location,** while not always possible, helped us establish a wider base. 
