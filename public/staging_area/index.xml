@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Staging_areas on Thea Knowles</title>
+    <link>/staging_area/</link>
+    <description>Recent content in Staging_areas on Thea Knowles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/staging_area/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning R: My path to banging my head against a wall in the company of others instead of alone in my office</title>
+      <link>/staging_area/reflection-a-year-of-r-ladies/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/staging_area/reflection-a-year-of-r-ladies/</guid>
+      <description>In October 2016, I came across this post and felt a small surge of excitement. A group of women with a shared mission of learning and exchanging R-based skills together.
+Learning R Preface: This started out as an attempt to reflect on our first year of R-Ladies, London Ontario. What began as an opening sentence to set the context of why I pursued it in the first place accidently exploded (potato-in-microwave-style) into its own post.</description>
+    </item>
+    
+  </channel>
+</rss>

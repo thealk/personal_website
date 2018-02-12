@@ -11,6 +11,55 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Learning R: My path to banging my head against a wall in the company of others instead of alone in my office</title>
+      <link>/staging_area/reflection-a-year-of-r-ladies/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/staging_area/reflection-a-year-of-r-ladies/</guid>
+      <description>&lt;p&gt;In October 2016, I came across &lt;a href=&#34;https://www.r-bloggers.com/all-the-r-ladies/&#34;&gt;this post&lt;/a&gt; and felt a small surge of excitement. A group of women with a shared mission of learning and exchanging R-based skills together.&lt;/p&gt;
+&lt;div id=&#34;learning-r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Learning R&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Preface:&lt;/strong&gt; This started out as an attempt to reflect on our first year of R-Ladies, London Ontario. What began as an opening sentence to set the context of why I pursued it in the first place accidently exploded (potato-in-microwave-style) into its own post. Oops.&lt;/p&gt;
+&lt;div id=&#34;tldr&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;tl;dr:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;If at first you feel like a n00b, that’s okay! What can feel like a steep learning curve is surmountable by a combination of the following:
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;A mountain of exemplars (i.e., old code)&lt;/li&gt;
+&lt;li&gt;Vulnerability and motivation for a &lt;em&gt;specific project&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;The wonderful feeling of solidarity that can be found in banging your head against the wall with other people with similar problems, and not alone in your office&lt;/li&gt;
+&lt;li&gt;Also &lt;a href=&#34;https://twitter.com/hadleywickham/status/589068687669243905?lang=en&#34;&gt;learning from the pain of past mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I began learning R in 2013 as a research assistant in a linguistics lab at McGill, about a week before I was scheduled to give a lab presentation on one of our projects. My supervisor scheduled us an ambitious three hour chunk in her office with the goal of crash-coursing me to quasi-independence in R. We sat in front of her computer as she walked me through an .R script she had written for a set of analyses very similar to what I was tasked to do. Having very little programming experience &lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, it felt like an awful steep learning curve at the time, but my supervisor loaded me up with a mountain (read: Dropbox folder) of .R analysis scripts she’d written in the past, promised me she’d look things over before setting me or my analyses free into the wild (i.e., the lab group), and off I went. I am greatful for the patience she exhibited during those three hours and the many subsequent hours she spent helping me learn how to learn. During the following week, I had a very specific goal&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;: tidy up our data and run linear mixed effects regressions, then cobble together enough of an interpretation of the results to be able to present them at our next lab meeting. I learned what I needed to learn to conduct our analyses in the lab, and got better at a few small bits and pieces at a time, as was needed to do my job. A year and a half later I applied and was accepted to a combined clinical Master’s and PhD in speech-language pathology in Londonontario&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;. I packed up my belongings, dolorously wrenched myself from the city of Montreal, and began two years of intensive clinical coursework. My need for R was temporarily shelved and dismissed.&lt;/p&gt;
+&lt;p&gt;Soon enough, once I got my feet under me and had begun a few new projects, I was back to data analysis. In my new environment, I was surrounded by brilliant clinicians and clinical researchers, but the tools and approaches were different than I was used to. This was fantastic, as I was learning new approaches to research and clinical science, but I found myself thinking back to how I could make a certain plot more appealling in ggplot, or could run mixed effects regression that couldn’t be done in SPSS. So I turned back to R and attempted to pick up where I’d left off.&lt;/p&gt;
+&lt;p&gt;In speech-language pathology we talk a lot about the importance of generalization - can a client take the tools and strategies they learn in therapy and apply them to their real-life communication needs? That is the ultimate goal, as that is where it counts most: that they succeed in their real lives, not just within the walls of the clinic. I considered the fundamental importance of generalization as I poured over my old .R scripts trying to take the bits and pieces I’d learned at my old job and apply those skills to my new work. While there it is impossible to overstate the value of learning to code by learning from previous examples, there was something I was missing. In my former lab, I’d been entrenched in a community using the same tools. As such, it was easy to have an off-handed conversation in the hallway or by rolling a chair over to a neighbour’s computer to ask a question about how to run this and that code. I missed that. I missed the comraderie as much as I missed the bazillion hours I probably saved by asking a simple question to someone I knew had dealt with that problem before. Problem was, I didn’t know where to find that community.&lt;/p&gt;
+&lt;p&gt;I tried. I attended a couple R workshops hosted at our campus library and run by statistics grad students (but the content was limited, and the entrance fee per class posed a problem to my meagre grad student budget). I started following R-bloggers, I dabbled with online tutorials, I stealthily crashed the Methods &amp;amp; Measurement seminars in my department, which actually functioned as an R-user group at the time. These were starts, but I wanted desparately to just be able to roll my chair up next to somebody and say “Hey, how did you flip your x and y axes?” or “Hey, did you see this nifty &lt;a href=&#34;https://github.com/karthik/wesanderson&#34;&gt;color palette for ggplot based on Wes Anderson movies?&lt;/a&gt;” or “Hey, why the $%^&amp;amp; is your &lt;a href=&#34;https://github.com/rasmusab/beepr&#34;&gt;script playing the Mario theme song?&lt;/a&gt;”&lt;/p&gt;
+&lt;p&gt;Imagine my delight when I came across &lt;a href=&#34;https://www.r-bloggers.com/all-the-r-ladies/&#34;&gt;this post&lt;/a&gt;, summoning ladies who use R to get together and swap skills, learn some things, and, importantly, develop a sense of community. As I grew weary of bashing my head against my desk in solitude, here was a callout for solidarity! The fact that it was specifically a female-driven group was an added bonus I only truly began to appreciate later on, but more on that later.&lt;/p&gt;
+&lt;p&gt;I recognize that there are important aspects of my learning journey that diverge from the experience of many others. An impromptu three-hour crash course, for example, is not the norm. In recent discoveries (i.e., too-late-for-me), I’ve found DataCamp to be a wonderful resource for learning different aspects of R, and believe their &lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r?utm_source=adwords_ppc&amp;amp;utm_campaignid=898687156&amp;amp;utm_adgroupid=48303643819&amp;amp;utm_device=c&amp;amp;utm_keyword=&amp;amp;utm_matchtype=b&amp;amp;utm_network=g&amp;amp;utm_adpostion=1t1&amp;amp;utm_creative=246801253895&amp;amp;utm_targetid=aud-392016246653:dsa-377762271983&amp;amp;utm_loc_interest_ms=&amp;amp;utm_loc_physical_ms=9001075&amp;amp;gclid=CjwKCAiA8P_TBRA9EiwAJrpHM6COUNrKslC3E63HTs3nsFMU4_GXD8cT2Mw2xeT-Jow618FBTreSyBoCCKEQAvD_BwE&#34;&gt;introduction to R&lt;/a&gt; is quite handy. Give them a look.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Including and limited to: 1) a year of computer science in my senior year of high school abroad in Spain (Spanish level at time = n00b), during which a remarkably patient group of my peers optimistically presumed that since I spoke English natively, I surely must know all about “for-loops” and “if-statements” since those were English, right? 2) a 200-level Intro to Computer Science that probably would have been the death of me were it not for the mentorship of a very, very patient friend who accepted tokens of appreciation only in the form of the occasional kebabs, and 3) many many hours of coding in Praat, where many bad habits are born.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;I think back to this often: a huge component of learning is having something that drives you. This is not only passion and inherent motivation (though bonus points for that!), but a deep vulnerability and desire to solve a specific problem in your life/work/research in a finite amount of time. Pierina Cheung, one of our R-Ladies, once told a charming story of learning R by giving herself a goal of “learn to make this boxplot” over the course of an international flight in order to meet a deadline. &lt;code&gt;Specific goal + finite time + personal need/vulnerability = greater likelihood of learning.&lt;/code&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Necessarily uttered on one breath so as not to get people too excited when I told them of my plans to move, let I crush them in disappointment in the reveal of Ontario.&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reflection: A year of R-Ladies #LdnOnt</title>
+      <link>/post/reflection-a-year-of-r-ladies-ldnont/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/reflection-a-year-of-r-ladies-ldnont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>A new post</title>
       <link>/post/a-new-post/</link>
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
@@ -26,8 +75,7 @@
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/rladies-ldnont/</guid>
-      <description>&lt;p&gt;Some text about rladies&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>

@@ -28,4 +28,3 @@ caption = ":smile:"
 
 +++
 
-Some text about rladies
