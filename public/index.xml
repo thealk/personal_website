@@ -11,45 +11,6 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Learning R: My path to banging my head against a wall in the company of others instead of alone in my office</title>
-      <link>/staging_area/reflection-a-year-of-r-ladies/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/staging_area/reflection-a-year-of-r-ladies/</guid>
-      <description>&lt;div id=&#34;learning-r&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Learning R&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Preface:&lt;/strong&gt; This started out as an attempt to reflect on our first year of R-Ladies, London Ontario. What began as an opening sentence to set the context of why I pursued it in the first place accidently exploded (potato-in-microwave-style) into its own post. Oops.&lt;/p&gt;
-&lt;div id=&#34;tldr&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;tl;dr:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;If at first you feel like a n00b, that’s okay! What can feel like a steep learning curve is surmountable by a combination of the following:
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;A mountain of exemplars (i.e., old code)&lt;/li&gt;
-&lt;li&gt;Vulnerability and motivation for a &lt;em&gt;specific project&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;The wonderful feeling of solidarity that can be found in banging your head against the wall with other people with similar problems, and not alone in your office&lt;/li&gt;
-&lt;li&gt;Also &lt;a href=&#34;https://twitter.com/hadleywickham/status/589068687669243905?lang=en&#34;&gt;learning from the pain of past mistakes&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I began learning R in 2013 as a research assistant in a linguistics lab at McGill, about a week before I was scheduled to give a lab presentation on one of our projects. My supervisor scheduled us an ambitious three hour chunk in her office with the goal of crash-coursing me to quasi-independence in R. We sat in front of her computer as she walked me through an .R script she had written for a set of analyses very similar to what I was tasked to do. Having very little programming experience &lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, it felt like an awful steep learning curve at the time, but my supervisor loaded me up with a mountain (read: Dropbox folder) of .R analysis scripts she’d written in the past, promised me she’d look things over before setting me or my analyses free into the wild (i.e., the lab group), and off I went. I am greatful for the patience she exhibited during those three hours and the many subsequent hours she spent helping me learn how to learn. During the following week, I had a very specific goal&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;: tidy up our data and run linear mixed effects regressions, then cobble together enough of an interpretation of the results to be able to present them at our next lab meeting. I learned what I needed to learn to conduct our analyses in the lab, and got better at a few small bits and pieces at a time, as was needed to do my job. A year and a half later I applied and was accepted to a combined clinical Master’s and PhD in speech-language pathology in Londonontario&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;. I packed up my belongings, dolorously wrenched myself from the city of Montreal, and began two years of intensive clinical coursework. My need for R was temporarily shelved and dismissed.&lt;/p&gt;
-&lt;p&gt;Soon enough, once I got my feet under me and had begun a few new projects, I was back to data analysis. In my new environment, I was surrounded by brilliant clinicians and clinical researchers, but the tools and approaches were different than I was used to. This was fantastic, as I was learning new approaches to research and clinical science, but I found myself thinking back to how I could make a certain plot more appealling in ggplot, or could run mixed effects regression that couldn’t be done in SPSS. So I turned back to R and attempted to pick up where I’d left off.&lt;/p&gt;
-&lt;p&gt;In speech-language pathology we talk a lot about the importance of generalization - can a client take the tools and strategies they learn in therapy and apply them to their real-life communication needs? That is the ultimate goal, as that is where it counts most: that they succeed in their real lives, not just within the walls of the clinic. I considered the fundamental importance of generalization as I poured over my old .R scripts trying to take the bits and pieces I’d learned at my old job and apply those skills to my new work. While there it is impossible to overstate the value of learning to code by learning from previous examples, there was something I was missing. In my former lab, I’d been entrenched in a community using the same tools. As such, it was easy to have an off-handed conversation in the hallway or by rolling a chair over to a neighbour’s computer to ask a question about how to run this and that code. I missed that. I missed the comraderie as much as I missed the bazillion hours I probably saved by asking a simple question to someone I knew had dealt with that problem before. Problem was, I didn’t know where to find that community.&lt;/p&gt;
-&lt;p&gt;I tried. I attended a couple R workshops hosted at our campus library and run by statistics grad students (but the content was limited, and the entrance fee per class posed a problem to my meagre grad student budget). I started following R-bloggers, I dabbled with online tutorials, I stealthily crashed the Methods &amp;amp; Measurement seminars in my department, which actually functioned as an R-user group at the time. These were starts, but I wanted desparately to just be able to roll my chair up next to somebody and say “Hey, how did you flip your x and y axes?” or “Hey, did you see this nifty &lt;a href=&#34;https://github.com/karthik/wesanderson&#34;&gt;color palette for ggplot based on Wes Anderson movies?&lt;/a&gt;” or “Hey, why the $%^&amp;amp; is your &lt;a href=&#34;https://github.com/rasmusab/beepr&#34;&gt;script playing the Mario theme song?&lt;/a&gt;”&lt;/p&gt;
-&lt;p&gt;Imagine my delight when I came across &lt;a href=&#34;https://www.r-bloggers.com/all-the-r-ladies/&#34;&gt;this post&lt;/a&gt;, summoning ladies who use R to get together and swap skills, learn some things, and, importantly, develop a sense of community. As I grew weary of bashing my head against my desk in solitude, here was a callout for solidarity! The fact that it was specifically a female-driven group was an added bonus I only truly began to appreciate later on, but more on that later.&lt;/p&gt;
-&lt;p&gt;I recognize that there are important aspects of my learning journey that diverge from the experience of many others. An impromptu three-hour crash course, for example, is not the norm. In recent discoveries (i.e., too-late-for-me), I’ve found DataCamp to be a wonderful resource for learning different aspects of R, and believe their &lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r&#34;&gt;introduction to R&lt;/a&gt; is quite handy. Give it a look.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Including and limited to: 1) a year of computer science in my senior year of high school abroad in Spain (Spanish level at time = n00b), during which a remarkably patient group of my peers optimistically presumed that since I spoke English natively, I surely must know all about “for-loops” and “if-statements” since those were English, right? 2) a 200-level Intro to Computer Science that probably would have been the death of me were it not for the mentorship of a very, very patient friend who accepted tokens of appreciation only in the form of the occasional kebabs, and 3) many many hours of coding in Praat, where many bad habits are born.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;I think back to this often: a huge component of learning is having something that drives you. This is not only passion and inherent motivation (though bonus points for that!), but a deep vulnerability and desire to solve a specific problem in your life/work/research in a finite amount of time. Pierina Cheung, one of our R-Ladies, once told a charming story of learning R by giving herself a goal of “learn to make this boxplot” over the course of an international flight in order to meet a deadline. &lt;code&gt;Specific goal + finite time + personal need/vulnerability = greater likelihood of learning.&lt;/code&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Necessarily uttered on one breath so as not to get people too excited when I told them of my plans to move, let I crush them in disappointment in the reveal of Ontario.&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Reflection: A year of R-Ladies #LdnOnt</title>
       <link>/post/reflection-a-year-of-r-ladies-ldnont/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
@@ -83,7 +44,7 @@
 &lt;/center&gt;
 &lt;p&gt;I perused the &lt;a href=&#34;https://rladies.org/&#34;&gt;R-Ladies meetup locations&lt;/a&gt; thinking I’d find an R-Ladies chapter nearby enough for me to drop in occasionally. At the time, R-Ladies was still new, and sadly for me the closest chapter was a six hour drive away. Not exactly a drop-in distance. Looking down the list, I spotted a group that had started to meet regularly in &lt;a href=&#34;https://www.meetup.com/rladies-boston/&#34;&gt;Boston, Massachusetts&lt;/a&gt;, about two hours from where I grew up and where my folks still live. &lt;em&gt;Excellent&lt;/em&gt;, I thought. I go back a few times a year; I’ll try to see if any of my visits coincide with their meetups. Once again, my plan was foiled. It didn’t look likely that any of my upcoming visits would align with their meetups. I reached out to the R-Ladies Boston organizer (Marianna) to inform her I wouldn’t be making the next meetup but was still hopeful that I would be able to make it to one in the future and, oh, I actually live 900 km away so that actually might not happen for awhile. She cheerfully responded and raised the suggestion of starting up an R-Ladies chapter in London, Ontario, if I felt so inclined.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Wut.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I had not considered this as an option. I would love it if a group could get started up here! I expressed tentative but enthusiastic interest, was pointed towards &lt;a href=&#34;info@rladies.org&#34;&gt;all the right people&lt;/a&gt;, and the ball got rolling.&lt;/p&gt;
+&lt;p&gt;I had not considered this as an option. I would love it if a group could get started up here! I expressed tentative but enthusiastic interest, was pointed towards &lt;a href=&#34;mailto:info@rladies.org&#34;&gt;all the right people&lt;/a&gt;, and the ball got rolling.&lt;/p&gt;
 &lt;p&gt;Sort of. It rolled just a wee bit and then it stopped.&lt;/p&gt;
 &lt;center&gt;
 &lt;iframe src=&#34;https://giphy.com/embed/DD2NmqYhvLiP6&#34; width=&#34;480&#34; height=&#34;294&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;
@@ -100,13 +61,13 @@
 &lt;li&gt;I am an incurable introvert. Superficially there are a number of actions I’ve taken that would appear to provide counter-evidence to this claim, but these actions do little to quell the innate fear in my heart that comes with standing up in front of a group, no matter how many times I do it.&lt;/li&gt;
 &lt;li&gt;I have no time. I need to focus all my time and energy on my research.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Still, in spite of the mind doing what it could to dissuade me from starting a chapter, my problem was still unresolved. There was still no chapter in London (or really anywhere nearby at the time), and no whisperings I’d heard of (and I’d been combing the town looking for such a group)&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;. I brought this up one day to a colleague (spoiler: enter &lt;strong&gt;Sally&lt;/strong&gt;). I lamented my concerns (&lt;em&gt;don’t know things, am afriad of things, don’t have time for things&lt;/em&gt;) and somehow, though the details of this are fuzzy to me, she mollified my anxiety. In a rather short turnaround time, we were suddenly excitedly talking plans to co-organize a local chapter. Things brings me to my first take-away: &lt;strong&gt;Find a friend who can share the burden with you.&lt;/strong&gt; This definitely alleviated Mind Games #2 and #3, and the more we planned, the more we realized #1 (“Not an expert”) &lt;em&gt;just didn’t really matter that much.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Still, in spite of the mind doing what it could to dissuade me from starting a chapter, my problem was still unresolved. There was still no chapter in London (or really anywhere nearby at the time), and no whisperings I’d heard of (and I’d been combing the town looking for such a group)&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;. I brought this up one day to a colleague (spoiler: enter &lt;strong&gt;Sally&lt;/strong&gt;). I lamented my concerns (&lt;em&gt;don’t know things, am afriad of things, don’t have time for things&lt;/em&gt;) and somehow, though the details of this are fuzzy to me, she mollified my anxiety. In a rather short turnaround time, we were suddenly excitedly talking plans to co-organize a local chapter. This brings me to my first take-away: &lt;strong&gt;Find a friend who can share the burden with you.&lt;/strong&gt; This definitely alleviated Mind Games #2 and #3, and the more we planned, the more we realized #1 (“Not an expert”) &lt;em&gt;just didn’t really matter that much.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In January 2017, Sally and I plunked down at the local graduate student pub and got to work. The online support from the &lt;a href=&#34;https://rladies.org/&#34;&gt;R-Ladies Global&lt;/a&gt; community is 🙌  incredible 🙌 , and a large part of our confidence in getting started came from the encouragement we felt right off the bat. We set up email and social media accounts for our new chapter. We composed informative and optimistic pleas and sent them out to the departmental heads of every university in the region. &lt;em&gt;Surely university departmental chairs will be more than eager to pass along word!&lt;/em&gt; This introduced us to &lt;strong&gt;Hurdle #2: Not everyone you contact (in fact, a very small percentage) will be willing to pass along your message.&lt;/strong&gt; Through several attempts, we found the following to be true: &lt;strong&gt;the best way to get the word out is to actually show up in person and say something about it.&lt;/strong&gt; When possible, we would prepare a small slide or blurb and head to a university class and make our pitch. Of course this isn’t always possible, but I can confidently say that this was the approach that got us the greatest response. We of course spammed all of the internet and quasi-pressured our friends into spreading the word too. All helped, but showing up to make the damn pitch in person definitely was the most effective method.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;launch-where-my-r-ladies-at&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Launch 🚀 Where my R-ladies at?&lt;/h3&gt;
-&lt;p&gt;We organized our first event designed to put out feelers and get a sense of what people interested in such a group would want. We sent out invites through our various channels. The night of our meet and greet, we met &lt;strong&gt;Hurdle #3: Event turnout is always going to much smaller than the initial response rate.&lt;/strong&gt; We had, I believe, 5 people show up (2 of whom were and Sally and me, and 2 whom I personally had begged to come. Not our best showing).&lt;/p&gt;
+&lt;p&gt;We organized our first event designed to put out feelers and get a sense of what people interested in such a group would want. We sent out invites through our various channels. The night of our meet and greet, we met &lt;strong&gt;Hurdle #3: Event turnout is always going to be much smaller than the initial response rate.&lt;/strong&gt; We had, I believe, 5 people show up (2 of whom were and Sally and me, and 2 whom I personally had begged to come. Not our best showing).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2018-02-12-reflection-a-year-of-r-ladies-ldnont_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Nevertheless, we sent out an online survey, got more responses, maintained a level of optimism that would have not been possible if flying solo, and planned our next meetup. This was to be our first meetup where we would actually feature a tutorial (&lt;strong&gt;tangible take-away skills&lt;/strong&gt;), and &lt;a href=&#34;https://www.linkedin.com/in/cortney-hanna-benson-4075b7ba/&#34;&gt;Cortney Hanna&lt;/a&gt; agreed to be our first presenter (little did we know at the time what a fantastic first presentation choice she would be!) We also reached out to a few key organizations that supported us with &lt;strong&gt;tangible &amp;amp; useful goodies&lt;/strong&gt;. &lt;a href=&#34;https://www.rstudio.com/&#34;&gt;RStudio&lt;/a&gt; sent us a batch of R hex stickers 😍 to give away &lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;. &lt;a href=&#34;https://www.datacamp.com/&#34;&gt;DataCamp&lt;/a&gt; set us up with membership for our whole group, giving us unlimited access to their course materials. Our first real event was a success! Though still small in numbers, our attendance more than tripled, and we received lots of positive feedback and encouragement. We forged ahead, and have only grown since then!&lt;/p&gt;
 &lt;center&gt;
@@ -152,7 +113,7 @@
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;What started out as a sentence about this to set up context turned into a rambling that at some point in time I will turn into another post.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;At the time, something that would have been perfect but didn’t exist yet was a remote chapter - made for those of us who wanted to join, but didn’t have the physical community set up in our locale. Good news though, &lt;a href=&#34;https://twitter.com/RLadiesRemote&#34;&gt;R-Ladies Remove now does exist!&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;At the time, something that would have been perfect but didn’t exist yet was a remote chapter - made for those of us who wanted to join, but didn’t have the physical community set up in our locale. Good news though, &lt;a href=&#34;https://twitter.com/RLadiesRemote&#34;&gt;R-Ladies Remote now does exist!&lt;/a&gt;&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;RStudio also provided us with generous financial funding at the start of this year as well. 😍 Thank you! 😍&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;We’re in the process of migrating materials to our &lt;a href=&#34;https://github.com/rladies/meetup-presentations_london_ontario&#34;&gt;GitHub&lt;/a&gt;, but if you don’t find what you’re looking for there, check out our &lt;a href=&#34;https://www.meetup.com/rladies-ldnont/messages/boards/&#34;&gt;MeetUp message board&lt;/a&gt; as well as our former &lt;a href=&#34;https://drive.google.com/drive/folders/0BzCQiZLG7vQmVm9ISndsRzllbTA?usp=sharing&#34;&gt;Google Drive&lt;/a&gt;.&lt;a href=&#34;#fnref4&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -194,194 +155,6 @@
       
       <guid>/talk/example-talk/</guid>
       <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/staging_area/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/staging_area/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Ocean&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Dark&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Coffee theme with Playfair font&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;1950s&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-  &lt;/a&gt;
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
     </item>
     
