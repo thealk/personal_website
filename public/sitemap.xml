@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/reflection-a-year-of-r-ladies-ldnont/</loc>
       <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     </url>
@@ -143,6 +152,16 @@
     
     <url>
     
+      <loc>/categories/presentations/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/</loc>
       <lastmod>2018-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -153,8 +172,48 @@
     
     <url>
     
+      <loc>/tags/r/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/r-ladies/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/r-ladies/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/rmarkdown/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/rmarkdown/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

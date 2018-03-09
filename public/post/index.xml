@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Workshop materials: Using R Markdown to generate reports and manuscripts (&#43; an accidental narrative)</title>
+      <link>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</guid>
+      <description>This past Tuesday we had our second R-Ladies #LdnOnt meet up of the year. The topic was using R Markdown to generate summary reports and manuscripts, led by yours truly. The original purpose of this post was to merely alert you, dear readers (all three of you) to the existence of the materials for this workshop, which are now posted online on our Github…
+ ⚠️ Consider this a warning that all that lies ahead for the remainder of this post is narrative text; all useful links and tidbits related to the main title of this post can be found at the link above.</description>
+    </item>
+    
+    <item>
       <title>Reflection: A year of R-Ladies #LdnOnt</title>
       <link>/post/reflection-a-year-of-r-ladies-ldnont/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
