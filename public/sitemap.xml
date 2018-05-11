@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/conference-twitter-hashtag-wordclouds/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</loc>
       <lastmod>2018-03-09T00:00:00+00:00</lastmod>
     </url>
@@ -123,6 +132,16 @@
     
     <url>
     
+      <loc>/tags/canadianslps/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
       <priority>0</priority>
     </url>
@@ -134,6 +153,36 @@
     
       <loc>/tags/code/</loc>
       <lastmod>2018-02-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/conference/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/conferences/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/motorspeech18/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -173,7 +222,17 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/r/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -222,6 +281,36 @@
     
     <url>
     
+      <loc>/tags/rtweet/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/sac/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/sacconf/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -234,6 +323,36 @@
     
       <loc>/</loc>
       <lastmod>2017-10-15T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/twitter/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/twitter/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/wordcloud2/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
