@@ -91,7 +91,7 @@
   
   <meta property="og:site_name" content="Thea Knowles">
   <meta property="og:url" content="/post/conference-twitter-hashtag-wordclouds/">
-  <meta property="og:title" content="Word Clouds from Conference Hashtags on Twitter | Thea Knowles">
+  <meta property="og:title" content="Using R to Generate Word Clouds from Conference Tweets | Thea Knowles">
   <meta property="og:description" content="It’s been just about a week since the Speech-Language and Audiology Canada (SAC) Conference. Clinical researchers in speech-pathology and audiology from all across Canada came to take part in three days of talks, poster presentations, product demos, and planning meetings. Because the conference is so large, there tend to be several overlapping sessions at once. There’s pretty much something there for everyone, but there’s also a good chance that you’ll be torn between attending two sessions that overlap and have to choose one.">
   <meta property="og:locale" content="en-us">
   
@@ -102,7 +102,7 @@
 
   
 
-  <title>Word Clouds from Conference Hashtags on Twitter | Thea Knowles</title>
+  <title>Using R to Generate Word Clouds from Conference Tweets | Thea Knowles</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
@@ -223,7 +223,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Word Clouds from Conference Hashtags on Twitter</h1>
+    <h1 itemprop="name">Using R to Generate Word Clouds from Conference Tweets</h1>
 
     
 
@@ -275,7 +275,7 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Word%20Clouds%20from%20Conference%20Hashtags%20on%20Twitter&amp;url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f"
+         href="https://twitter.com/intent/tweet?text=Using%20R%20to%20Generate%20Word%20Clouds%20from%20Conference%20Tweets&amp;url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
@@ -289,21 +289,21 @@
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f&amp;title=Word%20Clouds%20from%20Conference%20Hashtags%20on%20Twitter"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f&amp;title=Using%20R%20to%20Generate%20Word%20Clouds%20from%20Conference%20Tweets"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f&amp;title=Word%20Clouds%20from%20Conference%20Hashtags%20on%20Twitter"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fconference-twitter-hashtag-wordclouds%2f&amp;title=Using%20R%20to%20Generate%20Word%20Clouds%20from%20Conference%20Tweets"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Word%20Clouds%20from%20Conference%20Hashtags%20on%20Twitter&amp;body=%2fpost%2fconference-twitter-hashtag-wordclouds%2f">
+         href="mailto:?subject=Using%20R%20to%20Generate%20Word%20Clouds%20from%20Conference%20Tweets&amp;body=%2fpost%2fconference-twitter-hashtag-wordclouds%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -390,7 +390,7 @@ save(tweets, file=&quot;sacconf_tweets.RData&quot;)
 </div>
 <div id="when-was-the-action-happening" class="section level2">
 <h2>When was the action happening?</h2>
-<p>Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the <code>created_at</code> variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame.</p>
+<p>Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the <code>created_at</code> variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame. There were 131 tweets in total during the time period I queried.</p>
 <pre class="r"><code>library(ggplot2)
 
 ggplot(tweets, aes(created_at))+

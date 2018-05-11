@@ -221,16 +221,6 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/categories/r/</loc>
       <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -241,8 +231,8 @@
     
     <url>
     
-      <loc>/tags/r-ladies/</loc>
-      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -261,7 +251,7 @@
     
     <url>
     
-      <loc>/tags/rmarkdown/</loc>
+      <loc>/tags/r-ladies/</loc>
       <lastmod>2018-03-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -272,6 +262,16 @@
     <url>
     
       <loc>/categories/rmarkdown/</loc>
+      <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/rmarkdown/</loc>
       <lastmod>2018-03-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -331,7 +331,7 @@
     
     <url>
     
-      <loc>/tags/twitter/</loc>
+      <loc>/categories/twitter/</loc>
       <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -341,7 +341,7 @@
     
     <url>
     
-      <loc>/categories/twitter/</loc>
+      <loc>/tags/twitter/</loc>
       <lastmod>2018-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

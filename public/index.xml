@@ -11,7 +11,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Word Clouds from Conference Hashtags on Twitter</title>
+      <title>Using R to Generate Word Clouds from Conference Tweets</title>
       <link>/post/conference-twitter-hashtag-wordclouds/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -89,7 +89,7 @@ save(tweets, file=&amp;quot;sacconf_tweets.RData&amp;quot;)
 &lt;/div&gt;
 &lt;div id=&#34;when-was-the-action-happening&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;When was the action happening?&lt;/h2&gt;
-&lt;p&gt;Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the &lt;code&gt;created_at&lt;/code&gt; variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame.&lt;/p&gt;
+&lt;p&gt;Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the &lt;code&gt;created_at&lt;/code&gt; variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame. There were 131 tweets in total during the time period I queried.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
 
 ggplot(tweets, aes(created_at))+

@@ -1,5 +1,6 @@
 ---
-title: Word Clouds from Conference Hashtags on Twitter
+title: Using R to Generate Word Clouds from Conference Tweets
+subtitle: "#SACConf and #motorspeech18"
 author: ''
 date: '2018-05-09'
 slug: conference-twitter-hashtag-wordclouds
@@ -92,7 +93,7 @@ save(tweets, file=&quot;sacconf_tweets.RData&quot;)
 </div>
 <div id="when-was-the-action-happening" class="section level2">
 <h2>When was the action happening?</h2>
-<p>Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the <code>created_at</code> variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame.</p>
+<p>Now that we’ve got our tweets, we can see when most of the tweeting action was happening by plotting the density of the time stamp of the post (the <code>created_at</code> variable). This can help confirm that you’ve got the right timeframe and that the tweet schedules matches your expectations for that time frame. There were 131 tweets in total during the time period I queried.</p>
 <pre class="r"><code>library(ggplot2)
 
 ggplot(tweets, aes(created_at))+
