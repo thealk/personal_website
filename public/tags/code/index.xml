@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on Thea Knowles</title>
+    <link>/tags/code/</link>
+    <description>Recent content in Code on Thea Knowles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 09 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AutoVOT</title>
+      <link>/project/autovot/</link>
+      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/autovot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Praat Scripts</title>
+      <link>/project/praat-scripts/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/praat-scripts/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

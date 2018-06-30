@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R-ladies on Thea Knowles</title>
+    <link>/tags/r-ladies/</link>
+    <description>Recent content in R-ladies on Thea Knowles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 09 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r-ladies/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Workshop materials: Using R Markdown to generate reports and manuscripts (&#43; an accidental narrative)</title>
+      <link>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/workshop-using-r-markdown-to-generate-summary-reports-and-manuscripts/</guid>
+      <description>This past Tuesday we had our second R-Ladies #LdnOnt meet up of the year. The topic was using R Markdown to generate summary reports and manuscripts, led by yours truly. The original purpose of this post was to merely alert you, dear readers (all three of you) to the existence of the materials for this workshop, which are now posted online on our Github…
+ ⚠️ Consider this a warning that all that lies ahead for the remainder of this post is narrative text; all useful links and tidbits related to the main title of this post can be found at the link above.</description>
+    </item>
+    
+    <item>
+      <title>Reflection: A year of R-Ladies #LdnOnt</title>
+      <link>/post/reflection-a-year-of-r-ladies-ldnont/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/reflection-a-year-of-r-ladies-ldnont/</guid>
+      <description>R-Ladies, #LdnOnt just recently celebrated its one-year anniversary 🎉. As such, I thought it time to share my thoughts on the community we’ve found and the things we’ve learned. In case reading through a post of ramblings isn’t your style/you ain’t got time for that, here are some key learnings:
+tl;dr:  👊 If you are thinking of starting up a similar group, don’t let the mind games get you down!</description>
+    </item>
+    
+    <item>
+      <title>R-Ladies #LdnOnt</title>
+      <link>/project/rladies-ldnont/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/rladies-ldnont/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CanadianSLPs on Thea Knowles</title>
+    <link>/tags/canadianslps/</link>
+    <description>Recent content in CanadianSLPs on Thea Knowles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 09 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/canadianslps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Generate Word Clouds in R from Conference Tweets</title>
+      <link>/post/conference-twitter-hashtag-wordclouds/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/conference-twitter-hashtag-wordclouds/</guid>
+      <description>It’s been just about a week since the Speech-Language and Audiology Canada (SAC) Conference. Clinical researchers in speech-pathology and audiology from all across Canada came to take part in three days of talks, poster presentations, product demos, and planning meetings. Because the conference is so large, there tend to be several overlapping sessions at once. There’s pretty much something there for everyone, but there’s also a good chance that you’ll be torn between attending two sessions that overlap and have to choose one.</description>
+    </item>
+    
+  </channel>
+</rss>
