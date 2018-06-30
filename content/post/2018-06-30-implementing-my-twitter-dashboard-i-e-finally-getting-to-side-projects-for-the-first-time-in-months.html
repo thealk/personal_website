@@ -1,0 +1,98 @@
+---
+draft: yes
+title: Implementing my Twitter dashboard (i.e., finally getting to check off my more wistful to-do's)
+author: ''
+date: '2018-06-30'
+slug: my-twitter-dashboard
+categories:
+  - R
+  - twitter
+tags:
+  - R
+  - rtweet
+  - twitter
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p><em>As seems to be habit now, this post turned out a lot longer than I meant for it to. Quick links:</em></p>
+<ul>
+<li>Check out <a href="https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/">Joseph Stachelek's helpful tutorial</a> to implement this yourself (trust me, despite the upcoming wall of text, I made very, very few actual changes to his original implementation, so you should just go straight there for the how-to)</li>
+<li>Check out <em>my</em> <a href="projects/my-twitter-dashboard/">finished project here</a></li>
+</ul>
+<div id="saving-tweets-for-later-hacky-at-best" class="section level1">
+<h1>Saving tweets for later: Hacky at best</h1>
+<p>When I come across a tweet containing information I would like future-me to take note of, I have a rather inelegant set of strategies for making sure it stays accessible (god forbid I merely rely on remembering; if it’s not down on an externally stored list somewhere outside my brain, it will never see the light of day again):</p>
+<ul>
+<li>Sometimes, I send the tweet as a direct message to myself (this acts as a bonus rush of dopamine, since Twitter somewhat cruelly sends me a notification when I do this, and for a split second I think I’m getting an exciting message from another human on Twitter…)</li>
+<li>Sometimes, if it’s something I’d like to try out myself at some point, I’ll add it to my <a href="https://trello.com/">Trello</a> board. I have a special list for non-essential but fun tasks entitled “Wistful to dos when time allows (lolz)”. It’s nestled happily between my “Doing” and “Done” lists:</li>
+</ul>
+<center>
+<img src="/img/trello.png" alt="img" />
+</center>
+<ul>
+<li>Finally, sometimes I just like or retweet them. This <em>used</em> to be the least reliable way to assure that I’ll find them again because going back through old tweets is a pain…</li>
+</ul>
+<p>Fortunately there is <code>rtweet</code>, which virtually takes away all the pain associated with trying to find old tweets and scrolling through Twitter. I am still just getting the hang of it (see my <a href="http://theaknowles.com/post/conference-twitter-hashtag-wordclouds/">previous post</a> on using it to make wordclouds from conference hashtags), but am finding more and more ways to use it to my advantage, either for pure fun or organizational purposes.</p>
+<p>Now, let’s be clear: I am far too Twitter-naïve and lazy to come up with useful implementations on my own, but luckily through the power of the interwebs other people are there for me and come up with genius hacks that I, too, can learn to do. One serendipitous case in point came by way of this tweet by <a href="https://twitter.com/dataandme">Mara Averick</a>, highlighting a tutorial written by <a href="https://twitter.com/__jsta">Joseph Stachelek</a> (see? two geniuses embedded in one tweet. So convenient for me to passively scroll by and click on.):</p>
+<center>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Use ❤️s as bookmarks? 👨 🍳 rtweet × DT ⇩<br>🐦 “Making a twitter dashboard with R” by <a href="https://twitter.com/__jsta?ref_src=twsrc%5Etfw"><span class="citation">@__jsta</span></a> <a href="https://t.co/nPvkh4HhaK">https://t.co/nPvkh4HhaK</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/DeOfCgLXQs">pic.twitter.com/DeOfCgLXQs</a>
+</p>
+— Mara Averick (<span class="citation">@dataandme</span>) <a href="https://twitter.com/dataandme/status/993963029564882944?ref_src=twsrc%5Etfw">May 8, 2018</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+<p>This sounded immediately appealing to me so, quickly and hackishly, I threw <em>all</em> of my don’t-forget-this-thing strategies at it: Liked it, RT’d it, DM’d myself it, and stuck it on my Trello board.</p>
+<p>And there it has sat for the last 6 weeks, gathering metaphorical dust in only the ways forgotten corners of the internet can.</p>
+<p>The “Wistful to do’s” section of my Trello board gets little love compared to the rest of it<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. It has been quite a busy last couple of months, with wrapping up one study, getting another one off the ground, and completing a full-time clinical placement. So I’m not beating myself up on this at the moment. But today seemed a good day to tackle it. I had made sure to budget some time to work on fun stuff this weekend, so seemed like a good opportunity to sit on my air conditioned back porch and see if I could knock one or two things off that I’d been meaning to tackle<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<center>
+</div>
+<div id="twitter-dashboard-tutorial" class="section level1">
+<h1><a href="https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/">Twitter dashboard tutorial</a></h1>
+</center>
+<p>👆 Joseph Stachelek’s tutorial is <em>excellent</em> and I really didn’t change much at all, so go right there and check it out if you want to implement something similar for yourself.</p>
+<div id="things-i-did-change" class="section level2">
+<h2>Things I <em>did</em> change:</h2>
+<p>The main thing I adapted was that I used my Twitter <strong>retweets</strong> instead of my <strong>likes</strong>. I realized while putting this together that I use the like feature fairly haphazardly, and curating a list of them is no more useful than trying to scroll back through my Twitter feed (for me, anyway; maybe others are more regimented in their doling out of hearts).</p>
+<p>There’s no function in <code>rtweet</code> (that I could find) that exclusively gets a user’s <em>retweets</em>, though it is simple to get all of a given user’s <em>tweets</em> (in this case, your own), and only include those that are either flagged as <code>is_retweet==TRUE</code> or <code>is_quote==TRUE</code> as in the following example. Here I also only selected the columns I was interested in. Namely I 1) <em>excluded</em> “screen_name,” because it would always just be me in this case, and ) <em>included</em> “hashtags”, as I think this will ultimately be a useful variable to filter by.</p>
+<div id="things-that-took-me-a-little-longer" class="section level3">
+<h3>Things that took me a little longer</h3>
+<ul>
+<li><strong>Figuring out how to turn it into a project on my website.</strong> Joseph’s tutorial handily includes how to use the <code>widgetframe</code> package to embed your dashboard on a website, but being the n00b I am it took me a bit to figure out how to put this on my own site. In retrospect that is because I tried the most obvious thing last: if you are using Blogdown and Hugo-Academic, just turn your script into an .Rmd file and store it in your content/projects folder. Tweak the YAML to include</li>
+</ul>
+<p>and</p>
+<ul>
+<li><strong>Making the text column wide enough, and the URL column narrower.</strong> I will not disclose how long I spent trying to tweak this and still not getting it to my liking. It’s perfectly spelled out in the tutorial how to increase the width of a given column, and all the stackexchange queries in the world support exactly what’s there. The size of my text column doesn’t seem to increase in the rendered version on my browser, though it <em>did</em> increase in my viewer, but it seems to ceiling out at a narrower width than I’d like (I failed to make it any wider than it currently is on the projects page). Annoyingly, I can’t seem to get the URL column to get any <em>smaller</em>, despite employing the same strategies. Surely there is an easy solution out there that Someone Else could figure out, but I am giving up for now. It’s Good Enough for today.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="to-do" class="section level1">
+<h1>To Do ✅</h1>
+<p>I’ll probably still throw especially intriguing tutorials on my Trello board as a way to flag them, but I am very happy to now have a curated space to peruse the things I thought future-me would find useful. Saturday afternoon well spent, and a unicorn to-do finally moved over into Ryan Gosling’s very capable hands.</p>
+<center>
+<img src="/img/ryan_gosling_done.png" alt="img" /> Thanks boo 😘
+</center>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Perhaps that is a self-fulfilling prophecy, as I have captioned it with a unicorn and included a “lolz” mocking me in its title… note to self to revisit less self-defeating strategies at some point in the future…<a href="#fnref1">↩</a></p></li>
+<li id="fn2">I’ll admit that part of my reasoning for tackling this today was due to the fact that 1) it was approximately eight bazillion degrees outside today, so hot that even my dog refused to spend much time with me outdoors, cutting our attempt at a run short, and 2) I spent an embarrasingly long and anxiety-inducing time scrolling through this Twitter thread last night and came to the conclusion that I have very little to contribute as of late:
+<center>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+You know what I'd like to hear more about, the lives of academics. No, not the juicy stuff, just, what ELSE do you do? Hobbies, pastimes. Surely, academia is not your WHOLE life (I hope). I want to feel “normal” for having hobbies, I guess. I never hear academics talk about that.
+</p>
+— Juneisy Quintana Hawkins (<span class="citation">@JuneHawk20</span>) <a href="https://twitter.com/JuneHawk20/status/1012505920104992769?ref_src=twsrc%5Etfw">June 29, 2018</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+<a href="#fnref2">↩</a></li>
+</ol>
+</div>

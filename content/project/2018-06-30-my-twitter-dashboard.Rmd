@@ -1,0 +1,118 @@
+---
+title: My Twitter dashboard
+author: ''
+date: '2018-06-30'
+output:
+  blogdown::html_page
+slug: my-twitter-dashboard
+categories:
+  - R
+  - twitter
+tags:
+  - R
+  - rtweet
+  - twitter
+header:
+  caption: ''
+  image: ''
+image_preview: 'twitter_dashboard.png'
+---
+
+A searchable database of content I have retweeted as a way of bookmarking them for later. Created by following [Joseph Stachelek\'s helpful tutorial](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/)
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(comment = NA, warning = FALSE, message = FALSE)
+```
+
+```{r, include=FALSE}
+library(DT)
+library(widgetframe)
+## Loading required package: htmlwidgets
+dt <-  datatable(
+  head(iris, 20), 
+  options = list(scrollX=T,
+     columnDefs = list(list(className = 'dt-center', targets = 5)),
+     pageLength = 5, lengthMenu = c(5, 10, 15, 20)),
+  fillContainer = T)
+
+frameWidget(dt, height = 350, width = '95%')
+```
+
+
+```{r, echo=FALSE}
+library(rtweet)
+library(magrittr)
+library(dplyr)
+library(DT)
+library(widgetframe)
+
+# Pull likes from my twitter handle
+username <- "theaknowles"
+
+
+# Do same with my_retweets
+my_retweets <- get_timeline(username, n=100) %>%
+     subset((is_retweet==TRUE | is_quote==TRUE)) %>%
+     select("created_at", "text", "hashtags", "urls_expanded_url")%>%
+     arrange(desc(created_at))
+
+# Tutorial done with likes and not retweets
+#my_likes  <- get_favorites(username, n = 100) %>% 
+#     select("created_at", "screen_name", "text", "urls_expanded_url") %>%
+#     arrange(desc(created_at))
+
+
+# Get rid of time in dashboard
+my_retweets$created_at <- strptime(as.POSIXct(my_retweets$created_at), 
+                                format = "%Y-%m-%d")
+my_retweets$created_at <- format(my_retweets$created_at, "%Y-%m-%d")
+
+# Make URLs clickable
+createLink <- function(x) {
+     if(is.na(x)){
+          return("")
+     }else{
+          sprintf(paste0('<a href="', URLdecode(x),'" target="_blank">', 
+                         substr(x, 1, 25) ,'</a>'))
+     }
+}
+
+my_retweets$urls_expanded_url <- lapply(my_retweets$urls_expanded_url, 
+                                     function(x) sapply(x, createLink))
+
+# Make dashboard
+my_table <- datatable(my_retweets, 
+                      options = list(scrollX = TRUE, autoWidth = TRUE,
+                                     columnDefs = list(list(
+                                           width = '100%', 
+                                           targets = c(1)),
+                                     list(width='10%',
+                                          targets=c(3)))), 
+                      rownames = FALSE,
+                      fillContainer = TRUE,
+                      width = "100%", 
+                      colnames = c("Date", "Text", "Hashtags", "URL"),
+                      class = 'cell-border stripe')
+
+#my_table <- formatStyle(my_table, columns = 1:4, fontSize = '70%')
+my_table <- formatStyle(my_table, columns = 2, width = '800px')
+my_table <- formatStyle(my_table, columns = 3:4, width = '10%')
+my_table
+
+
+
+#temp_file <- tempfile()
+#saveWidget(my_table, temp_file)
+
+
+# doesn't work
+#system(paste("chrome", temp_file))
+
+
+
+widgetframe::frameWidget(my_table, width = "100%", height = 800, 
+            options = frameOptions(allowfullscreen = TRUE))
+
+```
+

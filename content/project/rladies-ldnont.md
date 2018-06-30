@@ -16,7 +16,7 @@ image_preview = "Logo_R-ladies_ldnont_forestCity.png"
 tags = ["r-ladies"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.meetup.com/rladies-ldnont/"
+external_link = "https://rladiesldnont.netlify.com/"
 
 # Does the project detail page use math formatting?
 math = false

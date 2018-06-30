@@ -1,4 +1,5 @@
 ---
+draft: yes
 title: Generate Word Clouds in R from Conference Tweets
 subtitle: "#SACConf and #motorspeech18"
 author: ''
@@ -66,12 +67,7 @@ library(knitr)
 
 tweets &lt;- search_tweets(&quot;#sacconf&quot;, lang=&quot;en&quot;,include_rts = FALSE)
 head(tweets$text)</code></pre>
-<pre><code>## [1] &quot;Keeping the energy from the #SACconf alive this May for #BHSM - Better #speechandhearing Month and spreading awareness about #SLPeeps and our extensive role in helping people with communication &amp;amp; swallowing disorders @SAC_OAC https://t.co/6yW8NCEecc&quot;                   
-## [2] &quot;#slpeeps #audpeeps Thank you to everyone who came out to our 2018 conference! Keep an eye on your inbox for our conference survey - we&#39;d love to hear about your experience! #SACconf&quot;                                                                                           
-## [3] &quot;Excited to meet Shanda from @SLHSpeechWorks at the airport on my way home from #SACconf! #bestfinish&quot;                                                                                                                                                                            
-## [4] &quot;Huge thanks to @SAC_OAC staff and volunteers, ACSLPA and their team, all of the sponsors and exhibitors, the presenters, and speakers for all of the work they put in to making #SACconf 2018 such an amazing experience for all.&quot;                                               
-## [5] &quot;The #SACConf was so amazing. Such incredible speakers and great people in attendance. I can’t believe how much work @SAC_OAC staff and volunteers did to make it happen.&quot;                                                                                                        
-## [6] &quot;When your work is referenced among Focused Oral Language Interventions in KG @SAC_OAC #SACConf #FeelingAccomplished @Kyteslp @janaleggett1 @LBlaxley @SharonMcWhirter @osla_ontario Maybe we should present it during a day-long seminar at SAC in 2020? https://t.co/s1YsL41To9&quot;</code></pre>
+<pre><code>## NULL</code></pre>
 <p>Timing is <em>crucial</em> here if you’re chasing hashtags, though, so be cautious.</p>
 <div id="gotta-act-fast" class="section level2">
 <h2>Gotta act fast!</h2>
