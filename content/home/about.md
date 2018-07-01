@@ -37,3 +37,5 @@ I am a candidate in the [combined MClSc/PhD](http://www.uwo.ca/fhs/csd/programs/
 3. The use of technology for speech measurement and treatment
 
 While much of my research has focused on hypokinetic dysarthria, a motor speech disorder associated with Parkinson's disease, I am also interested in the differential speech processes in younger and older healthy adults, as well as individuals with cerebellar damage. 
+
+As a means to becoming a better researcher, I also have a strong interest in tools for data analysis. Much of what I post here includes my musings on these tools (oftentimes this is the R programming language and environment) and tips or tricks I've tried to work through. See my posts and projects for more information.
