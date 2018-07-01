@@ -22,9 +22,22 @@ A searchable database of content I have retweeted as a way of bookmarking tweets
 
 See my post about it [here](http://theaknowles.com/post/my-twitter-dashboard/). 
 
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(comment = NA, warning = FALSE, message = FALSE)
+```
+
+```{r, include=FALSE}
+library(DT)
+library(widgetframe)
+## Loading required package: htmlwidgets
+dt <-  datatable(
+  head(iris, 20), 
+  options = list(scrollX=T,
+     columnDefs = list(list(className = 'dt-center', targets = 5)),
+     pageLength = 5, lengthMenu = c(5, 10, 15, 20)),
+  fillContainer = T)
+
+frameWidget(dt, height = 350, width = '95%')
 ```
 
 
@@ -103,4 +116,3 @@ widgetframe::frameWidget(my_table, width = "100%", height = 800,
             options = frameOptions(allowfullscreen = TRUE))
 
 ```
-
