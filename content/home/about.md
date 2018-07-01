@@ -38,4 +38,4 @@ I am a candidate in the [combined MClSc/PhD](http://www.uwo.ca/fhs/csd/programs/
 
 While much of my research has focused on hypokinetic dysarthria, a motor speech disorder associated with Parkinson's disease, I am also interested in the differential speech processes in younger and older healthy adults, as well as individuals with cerebellar damage. 
 
-As a means to constantly a bettering myself as a researcher, I also have a strong interest in tools for data analysis. Much of what I post here includes my musings on these tools (oftentimes this is the R programming language and environment) and tips or tricks I've tried to work through. See my posts and projects for more information.
+As a means to constantly strive to improve myself as a researcher, I also have a strong interest in tools for data analysis. Much of what I post here includes my musings on these tools (oftentimes this is the R programming language and environment) and tips or tricks I've tried to work through. See my posts and projects for more information.
