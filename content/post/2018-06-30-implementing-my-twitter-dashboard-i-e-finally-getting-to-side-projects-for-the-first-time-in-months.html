@@ -64,9 +64,10 @@ Use ❤️s as bookmarks? 👨 🍳 rtweet × DT ⇩<br>🐦 “Making a twitter
 <ul>
 <li><strong>Figuring out how to turn it into a project on my website.</strong> Joseph’s tutorial handily includes how to use the <code>widgetframe</code> package to embed your dashboard on a website, but being the n00b I am it took me a bit to figure out how to put this on my own site. In retrospect that is because I tried the most obvious thing last: if you are using Blogdown and Hugo-Academic, just turn your script into an .Rmd file and store it in your content/projects folder. Tweak the YAML to include</li>
 </ul>
-<pre class="{r,tput:"><code>  blogdown::html_page</code></pre>
+<pre><code>output:
+  blogdown::html_page</code></pre>
 <p>and</p>
-<p><code>{r,age_preview: 'twitter_dashboard.png'</code></p>
+<pre><code>image_preview: &#39;twitter_dashboard.png&#39;</code></pre>
 <ul>
 <li><p><strong>Making the text column wide enough, and the URL column narrower.</strong> I will not disclose how long I spent trying to tweak this and still not getting it to my liking. It’s perfectly spelled out in the tutorial how to increase the width of a given column, and all the stackexchange queries in the world support exactly what’s there. The size of my text column doesn’t seem to increase in the rendered version on my browser, though it <em>did</em> increase in my viewer, but it seems to ceiling out at a narrower width than I’d like (I failed to make it any wider than it currently is on the projects page). Annoyingly, I can’t seem to get the URL column to get any <em>smaller</em>, despite employing the same strategies. Surely there is an easy solution out there that Someone Else could figure out, but I am giving up for now. It’s Good Enough for today.</p></li>
 <li><p><strong>Merging text and retweet_text:</strong> I didn’t at first realize that regular retweets were getting truncated in the <code>text</code> variable. Once I figured out how to get the original text, I was happy, but ideally it’d be best to merge the two columns (e.g., when <code>retweet_text</code> is non-empty, replace <code>text</code> with <code>retweet_text</code>). After a few feeble failed attempts at this I gave up. For another day.</p></li>
