@@ -18,7 +18,7 @@ header:
 image_preview: 'twitter_dashboard.png'
 ---
 
-A searchable database of content I have retweeted as a way of bookmarking them for later. Created by following [Joseph Stachelek\'s helpful tutorial](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
+A searchable database of content I have retweeted as a way of bookmarking tweets for later. Created by following [Joseph Stachelek\'s helpful tutorial](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
 
 See my post about it [here](http://theaknowles.com/post/my-twitter-dashboard/). 
 
