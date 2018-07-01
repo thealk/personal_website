@@ -55,7 +55,7 @@ username <- "theaknowles"
 # Do same with my_retweets
 my_retweets <- get_timeline(username, n=100) %>%
      subset((is_retweet==TRUE | is_quote==TRUE)) %>%
-     select("created_at", "text", "hashtags", "urls_expanded_url")%>%
+     select("created_at", "text", "retweet_text", "hashtags", "urls_expanded_url")%>%
      arrange(desc(created_at))
 
 # Tutorial done with likes and not retweets
@@ -93,12 +93,12 @@ my_table <- datatable(my_retweets,
                       rownames = FALSE,
                       fillContainer = TRUE,
                       width = "100%", 
-                      colnames = c("Date", "Text", "Hashtags", "URL"),
+                      colnames = c("Date", "My Text", "Retweet Text", "Hashtags", "URL"),
                       class = 'cell-border stripe')
+
 
 #my_table <- formatStyle(my_table, columns = 1:4, fontSize = '70%')
 my_table <- formatStyle(my_table, columns = 2, width = '800px')
-my_table <- formatStyle(my_table, columns = 3:4, width = '10%')
 my_table
 
 
