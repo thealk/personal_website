@@ -87,15 +87,13 @@ my_retweets <- get_timeline(username, n=100) %>%
 
 - **Figuring out how to turn it into a project on my website.** Joseph's tutorial handily includes how to use the `widgetframe` package to embed your dashboard on a website, but being the n00b I am it took me a bit to figure out how to put this on my own site. In retrospect that is because I tried the most obvious thing last: if you are using Blogdown and Hugo-Academic, just turn your script into an .Rmd file and store it in your content/projects folder. Tweak the YAML to include 
 
-```{r, eval=FALSE}
-output:
+```{r,tput:
   blogdown::html_page
 ```
 
 and
 
-```{r, eval=FALSE}
-image_preview: 'twitter_dashboard.png'
+```{r,age_preview: 'twitter_dashboard.png'
 ```
 
 
