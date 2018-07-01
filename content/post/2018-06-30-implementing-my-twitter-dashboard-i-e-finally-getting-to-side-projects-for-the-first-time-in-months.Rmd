@@ -69,7 +69,7 @@ The "Wistful to do's" section of my Trello board gets little love compared to th
 
 ## Things I *did* change: 
 
-The main thing I adapted was that I used my Twitter **retweets** instead of my **likes**. I realized while putting this together that I use the like feature fairly haphazardly, and curating a list of them is no more useful than trying to scroll back through my Twitter feed (for me, anyway; maybe others are more regimented in their doling out of hearts).
+The main thing I adapted was that I used my Twitter **retweets** instead of my **likes**. I realized while putting this together that I use the like feature fairly haphazardly, and curating a list of them is no more useful than trying to scroll back through my Twitter feed (for me, anyway; maybe others are more regimented in their doling out of hearts). It's still not a perfect system (sometimes I retweet things that I want others to see, but I don't necessarily need to refer back to it later - for example, R-Ladies #LdnOnt info), but that's okay.
 
 There's no function in `rtweet` (that I could find) that exclusively gets a user's *retweets*, though it is simple to get all of a given user's *tweets* (in this case, your own), and only include those that are either flagged as `is_retweet==TRUE` or `is_quote==TRUE` as in the following example. Here I also only selected the columns I was interested in. Namely I 1) *excluded* "screen_name," because it would always just be me in this case, and ) *included* "hashtags", as I think this will ultimately be a useful variable to filter by.
 
