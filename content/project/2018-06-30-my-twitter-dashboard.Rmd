@@ -27,20 +27,6 @@ See my post about it [here](http://theaknowles.com/post/my-twitter-dashboard/).
 knitr::opts_chunk$set(comment = NA, warning = FALSE, message = FALSE)
 ```
 
-```{r, include=FALSE}
-library(DT)
-library(widgetframe)
-## Loading required package: htmlwidgets
-dt <-  datatable(
-  head(iris, 20), 
-  options = list(scrollX=T,
-     columnDefs = list(list(className = 'dt-center', targets = 5)),
-     pageLength = 5, lengthMenu = c(5, 10, 15, 20)),
-  fillContainer = T)
-
-frameWidget(dt, height = 350, width = '95%')
-```
-
 
 ```{r, echo=FALSE}
 library(rtweet)

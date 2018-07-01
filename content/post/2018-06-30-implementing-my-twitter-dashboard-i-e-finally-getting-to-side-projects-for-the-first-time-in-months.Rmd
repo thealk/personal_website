@@ -102,7 +102,9 @@ image_preview: 'twitter_dashboard.png'
 - **Making the text column wide enough, and the URL column narrower.** I will not disclose how long I spent trying to tweak this and still not getting it to my liking. It's perfectly spelled out in the tutorial how to increase the width of a given column, and all the stackexchange queries in the world support exactly what's there. The size of my text column doesn't seem to increase in the rendered version on my browser, though it *did* increase in my viewer, but it seems to ceiling out at a narrower width than I'd like (I failed to make it any wider than it currently is on the projects page). Annoyingly, I can't seem to get the URL column to get any *smaller*, despite employing the same strategies. Surely there is an easy solution out there that Someone Else could figure out, but I am giving up for now. It's Good Enough for today.
 
 
-# To Do `r emo::ji("white_check_mark")`
+# - **Updating it:** There's probably a way to make the dashboard update automatically, but as of right now it only seems to do so if I run the code again and update my site. Somewhat obnoxious, but that will be another wistful to do for later.
+
+To Do `r emo::ji("white_check_mark")`
 I'll probably still throw especially intriguing tutorials on my Trello board as a way to flag them, but I am very happy to now have a curated space to peruse the things I thought future-me would find useful. Saturday afternoon well spent, and a unicorn to-do finally moved over into Ryan Gosling's very capable hands.
 
 <center>
