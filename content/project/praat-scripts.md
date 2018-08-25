@@ -6,7 +6,7 @@ date = "2018-02-08"
 title = "Praat Scripts"
 
 # Project summary to display on homepage.
-summary = "Nothing here yet! Just an empty little repository waiting to be filled."
+summary = "A subset of Praat scripts I have written for various purposes."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "praat_logo.png"

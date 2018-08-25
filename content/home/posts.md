@@ -6,7 +6,7 @@ active = true
 date = "2016-04-20T00:00:00"
 
 title = "Recent Posts"
-subtitle = "Not much here yet, but wait for it!"
+subtitle = ""
 
 # Order that this section will appear in.
 weight = 50
