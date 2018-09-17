@@ -19,10 +19,14 @@ header:
   image: ''
 ---
 
+A list of resources I am finding helpful for preparing to write a dissertation in RMarkdown.
 
+
+- [Lucy D'Agostino McGowan's incredibly helpful toolkit & blogpost: "One year to dissertate"](https://twitter.com/LucyStats/status/1041438896901500928)
 - [Rosanna van Hepen's blog series on writing a thesis with RMarkdown](https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/)
 - [My presentation at our R-Ladies #LndOnt chapter meet up on using RMarkdown for writing articles (more useful links in the presentation)](https://github.com/rladies/meetup-presentations_london_ontario/tree/master/2018-03-06_rmarkdown)
 - [Angela Li's twitter thread of how she used RMarkdown for thesis writing](https://twitter.com/theaknowles/status/1024647977401344000)
 - [Curtis Miller's blog post on how tips for organizing R projects](https://ntguardian.wordpress.com/2018/08/02/how-should-i-organize-my-r-research-projects/)
 - [RStudio community thread on recommendations for writing a dissertation in RMarkdown/RStudio](https://community.rstudio.com/t/what-are-your-recommendations-for-thesis-writing-with-rstudio-and-rmarkdown/13576)
      - NB: If you found this list by clicking on the link in my reply to this thread, I apologize for the circular nature of this link! But the thread is truly useful, so I've added it here for my own reference later on.
+
