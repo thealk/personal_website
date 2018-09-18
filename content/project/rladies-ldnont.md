@@ -6,14 +6,14 @@ date = "2018-02-10"
 title = "R-Ladies #LdnOnt"
 
 # Project summary to display on homepage.
-summary = "Information about past and upcoming meetups."
+summary = "Information about meetups and links to workshop materials."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "Logo_R-ladies_ldnont_forestCity.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["r-ladies"]
+tags = ["r-ladies", "code"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://rladiesldnont.netlify.com/"
@@ -24,7 +24,7 @@ math = false
 # Optional featured image (relative to `static/img/` folder).
 [header]
 image = "Logo_R-ladies_ldnont_forestCity.png"
-caption = ":smile:"
+caption = ":computer:"
 
 +++
 

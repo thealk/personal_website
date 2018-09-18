@@ -23,7 +23,7 @@ math = false
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "thea_media.jpg"
+#image = "thea_media.jpg"
 #caption = ":movie_camera:"
 
 +++
