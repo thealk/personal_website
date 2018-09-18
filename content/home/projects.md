@@ -35,6 +35,10 @@ filter_default = 0
 [[filter]]
   name = "Media"
   tag = ".media"
+  
+[[filter]]
+  name = "Research"
+  tag = ".research"
 
 [[filter]]
   name = "R-Ladies"
