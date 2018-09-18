@@ -23,7 +23,7 @@ math = false
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "psso.png"
+image = "thea_media.jpg"
 #caption = ":smile:"
 
 +++
