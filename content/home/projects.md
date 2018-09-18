@@ -5,7 +5,7 @@ active = true
 date = "2018-02-09T00:00:00"
 
 title = "Projects"
-subtitle = ""
+subtitle = "Serious and not-so-serious"
 
 # Order that this section will appear in.
 weight = 40
@@ -33,6 +33,10 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
+  name = "Media"
+  tag = ".media"
+
+[[filter]]
   name = "R-Ladies"
   tag = ".r-ladies"
 
@@ -43,6 +47,5 @@ filter_default = 0
 [[filter]]
   name = "Code"
   tag = ".code"
-
 +++
 
