@@ -13,7 +13,7 @@ image_preview = "psso.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["research", "r-ladies"]
+tags = ["media", "research", "r-ladies"]
 
 # Optional external URL for project (replaces project detail page).
 #external_link = ""
@@ -24,7 +24,7 @@ math = false
 # Optional featured image (relative to `static/img/` folder).
 [header]
 image = "thea_media.jpg"
-#caption = ":smile:"
+#caption = ":movie_camera:"
 
 +++
 :newspaper: ["Speech in Parkinson’s disease: The potential role of amplification devices""](https://parkinsonsociety.ca/wp-content/uploads/2018/07/Parkinson-68-complete-for-web-Compressed-003-final.pdf)
