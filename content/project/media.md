@@ -9,7 +9,7 @@ title = "Media"
 summary = "Read/watch/listen to me describing some of my work."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "thea_media.jpg"
+image_preview = "psso.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
@@ -23,7 +23,7 @@ math = false
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "thea_media.jpg"
+image = "psso.png"
 #caption = ":smile:"
 
 +++
