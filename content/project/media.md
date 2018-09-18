@@ -27,7 +27,7 @@ image = "thea_media.jpg"
 #caption = ":smile:"
 
 +++
-:newspaper: [Speech in Parkinson’s disease: The potential role of amplification devices](https://parkinsonsociety.ca/wp-content/uploads/2018/07/Parkinson-68-complete-for-web-Compressed-003-final.pdf)
+:newspaper: ["Speech in Parkinson’s disease: The potential role of amplification devices""](https://parkinsonsociety.ca/wp-content/uploads/2018/07/Parkinson-68-complete-for-web-Compressed-003-final.pdf)
 
 - See page 10 of the Parkinson Society of Southwestern Ontario newsletter to read a short summary of our clinical study of voice amplification devices in Parkinson's disease
 
@@ -40,7 +40,7 @@ image = "thea_media.jpg"
 
 - Interview for the Western Gazette on our deep brain stimulation research. This interview followed the Three Minute Thesis presentation
 
-:radio: [The R-Ladies Piece](https://soundcloud.com/chrwradio/gradcast-123-the-r-ladies-piece)
+:radio: ["The R-Ladies Piece"](https://soundcloud.com/chrwradio/gradcast-123-the-r-ladies-piece)
 
 - Interview (together with Sally Norris) about running R-Ladies #LdnOnt, given for Western University's *GradCast* podcast series
 
