@@ -176,7 +176,7 @@ defaultContentLanguageInSubdir = false
   # Configuration of talk pages.
   [params.talks]
     # Show talk time?
-    time = true
+    time = false
 
   # Configuration of publication pages.
   [params.publications]
@@ -186,6 +186,18 @@ defaultContentLanguageInSubdir = false
 
   # Configuration of project pages.
   [params.projects]
+    # List publications and talks related to the project?
+    list_children = true
+
+    # Publication list format.
+    #   0 = Simple
+    #   1 = Detailed
+    #   2 = APA
+    #   3 = MLA
+    publication_format = 3
+    
+  # Configuration of project pages.
+  [params.presentations]
     # List publications and talks related to the project?
     list_children = true
 
@@ -262,25 +274,25 @@ defaultContentLanguageInSubdir = false
   url = "../files/cv/KnowlesCV_academic_2018.pdf"
   weight = 2
 
-#[[menu.main]]
-#  name = "R-Ladies #LdnOnt"
-#  url = "#rladies"
-#  weight = 2
+[[menu.main]]
+  name = "Publications"
+  url = "#publications"
+  weight = 3
 
 #[[menu.main]]
-#  name = "Publications"
-#  url = "#publications_selected"
-#  weight = 3
+#  name = "Presentations"
+#  url = "#talks"
+#  weight = 4
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 3
+  weight = 5
 
 [[menu.main]]
   name = "Posts"
   url = "#posts"
-  weight = 4
+  weight = 6
 
 #[[menu.main]]
 #  name = "Teaching"
