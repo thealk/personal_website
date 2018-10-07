@@ -14,7 +14,7 @@ authors = ["Meghan Clayards, Thea Knowles"]
 # 4 = Technical report
 # 5 = Book
 # 6 = Book chapter
-publication_types = ["2"]
+publication_types = ["1"]
 
 # Publication name and optional abbreviated version.
 publication = "In *Proceedings of the 18th International Congress of Phonetic Sciences*, IEEE."
@@ -36,7 +36,7 @@ selected = false
 #projects = ["prosody"]
 
 # Links (optional).
-url_pdf = ""
+url_pdf = "https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2015/Papers/ICPHS0934.pdf"
 url_preprint = ""
 url_code = ""
 url_dataset = ""

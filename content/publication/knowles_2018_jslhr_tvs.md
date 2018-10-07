@@ -36,7 +36,7 @@ selected = true
 #projects = ["dbs"]
 
 # Links (optional).
-url_pdf = ""
+url_pdf = "https://jslhr.pubs.asha.org/article.aspx?articleid=2703922"
 url_preprint = ""
 url_code = ""
 url_dataset = ""

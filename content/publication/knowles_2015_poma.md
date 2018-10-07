@@ -36,7 +36,7 @@ selected = false
 #projects = ["tvs"]
 
 # Links (optional).
-url_pdf = ""
+url_pdf = "https://asa.scitation.org/doi/10.1121/2.0000125"
 url_preprint = ""
 url_code = ""
 url_dataset = ""
