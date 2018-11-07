@@ -1,0 +1,42 @@
+---
+title: 'Workshop materials for R-Ladies #LdnOnt: Figuring out figures in R'
+author: ''
+date: '2018-11-07'
+slug: workshop-materials-for-r-ladies-ldnont-figuring-out-figures-in-r
+categories:
+  - r-ladies
+  - ggplot
+  - R
+  - presentations
+tags:
+  - R
+  - r-ladies
+  - ggplot
+  - dataviz
+  - rstats
+header:
+  caption: ''
+  image: ''
+---
+
+<center>
+![](/img/ggplot_workshop.jpg)
+</center>
+
+I gave an intro workshop on ggplot ("Figuring out Figures in R") for our R-Ladies #LdnOnt crew at the end of October. Those materials are online now in various forms:
+
+- [The slides themselves](https://rladiesldnont.netlify.com/slides/ggplot_workshop#1)
+- [Github repo](https://github.com/rladies/meetup-presentations_london_ontario/tree/master/2018-10-25_ggplot) containing the source code to the slides, the data, and an .R script including some of the code we played around with
+- [Google Drive folder](https://drive.google.com/drive/folders/1jNOtDwK8NK2wVRtNx-a2IvSw0ZhgBdex?usp=drive_open) containing everything you can find at our GitHub (trying to be cross-platform friendly, here!)
+
+This was a fun workshop to give because, to an extent, it is something I am fairly familiar with (I have plotted many a graph in ggplot), but there are still lots of unknowns to me. I'm exploring some new formats for visualization (e.g., I'm getting really stoked about [joyplots](https://github.com/clauswilke/ggridges)[^1], aka ridgeplots lately for my dissertation) that I wanted an excuse to explore more in depth. There are a number of aspects of ggplot I have to look up
+
+*literally* `r emo::ji("clap")` *every* `r emo::ji("clap")` *time* `r emo::ji("clap")` *I* `r emo::ji("clap")` *use* `r emo::ji("clap")` *it*
+
+(cough, [`theme()`](https://ggplot2.tidyverse.org/reference/theme.html), cough), and I wanted a good reference I could refer back to for that. I'd also been wanting to try out creating presentations in  [`xaringan`](https://slides.yihui.name/xaringan/#1), and so I used this workshop as an excuse to get my hands dirty with that too.
+
+That's pretty much all I have to say! I am truncating my tendancy to turn these little "updates" into long rambly posts because there are a number of other things on my to-do list today, and it's too easy to get carried away writing about R-Ladies fun shenanigans.
+
+[^1]: Named for their artful resemblance to the cover of Joy Division's album, [*Unknown Pleasures*](https://blogs.scientificamerican.com/sa-visual/files/2015/02/pulsar_detail.jpg)
+
+
