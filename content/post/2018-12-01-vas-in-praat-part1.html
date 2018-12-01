@@ -1,0 +1,258 @@
+---
+title: "Measuring speech intelligibility using Praat: Part I"
+author: ''
+date: '2018-12-01'
+slug: measuring-speech-intelligibility-in-praat-part1
+categories:
+  - Praat
+  - speech science
+  - research
+tags:
+  - praat
+  - speech science
+  - intelligibility
+  - slp
+  - slpeeps
+  - acoustics
+  - visual analogue scale
+  - vas
+header:
+  caption: ''
+  image: ''
+csl: /Users/thea/CSL_files/apa.csl
+bibliography: /Users/thea/references.bib
+featuredImage: "/img/vas/vas.png"
+---
+
+
+
+<div id="in-a-nutshell" class="section level1">
+<h1>In a nutshell</h1>
+<ul>
+<li>This is Part 1 of a series of posts on writing a set of scripts to administer perceptual rating scale listening tasks using Praat software.</li>
+<li>I wrote a little script that runs a computerized visual analog scale (VAS) through Praat. It was designed to be used for administering speech intelligibility tasks in our lab, whereby participants hear an audio clip of somebody speaking, and must rate how intelligible (i.e., understandable) it was to them along a scale, for example, from “low” to “high.” It is adaptable to any perceptual experiment designed to be delivered in VAS form.</li>
+<li>This post will walk through the motivation for automating listener tasks like this and a demo of how it works.</li>
+<li>An upcoming post will provide a step-by-step of <em>how</em> it was written in Praat (in large part as a reminder to future me, in the inevitable case that I eventually forget what I did).</li>
+<li>Future posts in this series will introduce a script that allows for a listener to <em>transcribe</em> speech in Praat, rather than (or in addition to) rating it along a VAS. Come along for the joy of learning where the heck the backspace key lives in Praat, and other fun discoveries.</li>
+</ul>
+<div id="take-me-to" class="section level2">
+<h2>Take me to…</h2>
+<ul>
+<li><a href="#clinspeech">Background behind tools like these in clinical speech research</a></li>
+<li><a href="#tools">Other tools besides Praat that may have been just as good for the job</a></li>
+<li><a href="#demo">Tutorial for using <code>vas.praat</code></a></li>
+<li><a href="https://github.com/thealk/PraatScripts/tree/master/vas">The Praat source code for <code>vas.praat</code></a></li>
+</ul>
+</div>
+</div>
+<div id="clinspeech" class="section level1">
+<h1>Clinical speech research</h1>
+<p>In my research, I work with people who have neurological speech disorders. That is, atypical speech production that arises due to abnormalities in the brain (for example, changes in the brain associated with Parkinson’s disease). Different aspects of spoken communication can be measured in multiple ways. For example:</p>
+<ul>
+<li><strong>Acoustic analysis</strong>: What can the physical properties of the speech signal tell us about a person’s spoken communication? Are certain acoustic parameters deviant compared to otherwise healthy speakers? Can these acoustic differences help to explain the differences noticed by the speaker or by listeners?</li>
+<li><strong>Self-perception</strong>: Do <em>I</em>, as a talker, notice differences in my <em>own</em> speech compared to those around me? Do those differences bother me? Do they impact my communication?</li>
+<li><strong>Listener perception</strong>: Do the people that listen to me speak notice differences? Do these differences impact how much of my message they are able to understand?</li>
+</ul>
+<!-- ***Acoustic analysis*** (my meat and potatoes 🍗 🥔 / one true love ❤️) can be performed by studying the speech signal itself, and extracting certain objective measurements related to duration, intensity, and frequency of the signal. -->
+<p>The last two are examples of <em>perceptual measures.</em> <strong><em>Perceptual measures</em></strong> can take many forms, but one method we often rely on is the use of rating scales. That is, an individual is asked to rate some aspect of their own or another person’s speech. These ratings often take the form of descriptors (e.g., poor-fair-good), numbers (e.g., 1 to 10), or a position on a line with anchors (e.g., low to high). Perceptual measures can also involve listeners making more objective judgements about what they heard, for example, being forced to choose between two similar sounds or being asked to write down what they heard a speaker say.</p>
+<div id="speech-intelligibility-ratings" class="section level2">
+<h2>Speech intelligibility ratings</h2>
+<p>Many people with speech disorders find it difficult to be understood by others. In the clinical speech world, the term <em>speech intelligibility</em> refers to the ability of a typical listener to understand a person’s speech <span class="citation">(Yorkston, Strand, &amp; Kennedy, 1996)</span>. This is often referred to in percentage form and provided with the context in which it was measured. For example, “Bob was 85% intelligible during his reading of a short passage” means that people who listened to Bob reading some sentences aloud were able to understand approximately 85% of what he said. That could change depending on what Bob’s doing (reading vs. having a conversation), who’s listening to him (people who know him, people who don’t), the environment (in a quiet vs. noisy environment), and many other factors.</p>
+<p>There are a few ways we can gather speech intelligibility estimates. One way is <em>transcription</em>; listeners write down exactly what they heard, and their responses are compared to what was actually said. Another method is <em>estimation</em>; listeners rate along a scale with anchors (e.g., “low” to “high”) how intelligible a spoken utterance was to them. One type of scale is what’s called a Visual Analog Scale (VAS), which consists of a line with anchors, along which the listener makes a tick mark to indicate their response. This post is about using tools for <em>estimation</em>, but the next post in this series will discuss <em>transcription</em>.</p>
+</div>
+</div>
+<div id="tools" class="section level1">
+<h1>🛠 The search for the right tool</h1>
+<p>In our lab, we’ve frequently presented listeners with printed forms that they mark manually as they listen to audio clips. A goal of mine this year was to come up with a system to do the same thing but through an automated, computerized system (I do love me some semi-automation). Automating this kind of task takes a big chunk out of the time required to conduct analysis, and reduces the risk of manual input error (e.g., me messing up and entering the wrong number into a spreadsheet when my eyes are going blurry from entering hundreds of other numbers). In looking into my options, I found several viable routes:</p>
+<div id="potential-programs-for-creating-an-automated-and-computerized-visual-analog-scale-for-listening-tasks" class="section level3">
+<h3>Potential programs for creating an automated and computerized visual analog scale for listening tasks</h3>
+<!-- ##### *Many of which probably would have been more efficient, cleaner options!* -->
+<p><strong><a href="http://www.nrlc-group.net/software/details/adaptive-visual-analogue-scales">Adaptive Visual Analog Scales (program)</a></strong></p>
+<ul>
+<li>Hosted by the Neurobehavioral Research Laboratory and Clinic, this is a downloadable program that allows you to generate and administer computerized visual analog scales. Excellent! This is exactly what I wanted. But…</li>
+<li>My labmate, <a href="https://daryncsparrow.wixsite.com/home">Daryn</a>, was the one who found this program in the first place, and has successfully used it to run a listening experiment. She found that it got the job done, but found that the stimulus presentation (in this case, the presentation of audio clips) couldn’t be linked directly to the responses - you have to rely on the hope that your listeners stay on task the whole time. This opens up the possibility for responses to become out of sync with the audio clips, which can be a big problem. On her recommendation I looked into other more customizable options.</li>
+</ul>
+<p><a href="http://www.psychopy.org"><strong>PsychoPy</strong></a></p>
+<ul>
+<li>PsychoPy is a set of tools that allow you to run experiments (similar to E-Prime), and is written in Python. The <a href="http://www.psychopy.org/api/visual/ratingscale.html">RatingScale</a> function was one of the most promising options I found, and seems highly fit for the task. If you know Python and want to do something similar, this is probably a fantastic option.</li>
+<li>I, however, am a Python n00b and haven’t really used it in a few years. Given that I was looking for an option that would be usuable by early fall (this was August), I decided that learning PsychoPy wasn’t a good short term investment of my time. That being said, I will definitely return to PsychoPy options for future projects because I think it will probably come in handy for multiple tasks (also, becoming more proficient at Python is an eventual long-term goal regardless).</li>
+</ul>
+<p><a href="https://www.mathworks.com/products/matlab.html"><strong>MatLab</strong></a></p>
+<ul>
+<li>Similar to PsychoPy, MatLab is a software environment and programming language that has many viable options for creating visual sliders that could be used as visual analog scales. I have seen posters that mentioned using visual analog scales that were generated using a custom MatLab script.</li>
+<li>Once again, my MatLab skillz are n00b level, though slightly higher than my Python skills. I seriously considered this option, as I’m actively learning MatLab now (as opposed to back-burnering it as I have with Python). In the end I decided I could be more efficient with another option (keep reading), but MatLab surely has some good answers too.</li>
+<li><strong>NB</strong> A potential downside of MatLab is that it is not open source. I have access through my university, but in theory that could change…</li>
+</ul>
+<p><a href="https://shiny.rstudio.com/"><strong>R Shiny</strong></a></p>
+<ul>
+<li>R Shiny is an R package that allows you to build interactive web app interfaces. While designed to be more of a data analysis tool, rather than an administrative experimental program, its functionality could in theory support building a visual analog scale (plus R is so elegant and R Shiny makes such pretty web-friendly interfaces). Linking it to audio is also probably well within the realm of possibilities, but not exactly what it’s designed to do. One major benefit with R Shiny could be the ability to incorporate the results immediately into whatever analysis you plan to run, if running it in R.</li>
+</ul>
+<p><a href="http://www.fon.hum.uva.nl/praat/"><strong>Praat</strong></a></p>
+<ul>
+<li>Praat is the workhorse of acoustic analysis of speech. It is an incredibly powerful piece of software hidden behind an incredibly underwhelming logo. It also has its own scripting language that allows you to automate the functions you can perform with the software. A key feature for implementing this project was the fact that it also has a “Demo Window” that allows you to code up the kind of interface I had in mind,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> as well as the ability to seamlessly integrate audio files.</li>
+</ul>
+<p>Ultimately, I chose Praat. I think all of these are great options, but in the end it came down to what was going to be the most customizable and efficient option for me. I’ve used Praat for more than a few years now, and while I recognize its pitfalls and relative weaknesses compared to other programming languages, I have a very warm spot in my heart for it. In the interest of efficiency (I’ve got less than a year left of this PhD…), I knew I could likely complete what I wanted to do in easily a third or less of the time it would take me to learn waht I needed to do in PsychoPy, MatLab, or R Shiny, and offered me more customizability than an already-built web app. The finished script can also easily be used by somebody who is <em>not</em> as familiar with Praat, and I may turn it into a plugin for even easier implementation one of these days. But today is not that day.</p>
+</div>
+<div id="a-quick-sidebar-on-scripting-in-praat" class="section level3">
+<h3>A quick sidebar on scripting in Praat</h3>
+<p>The Praat scripting language is wonderfully utiliarian, but requires you to be a fairly fluent user of Praat to know where to begin. It is also somewhat scoffed at by serious programmers because it’s a bit clunky and doesn’t align with typical coding conventions. It has, for example, been nominated as <a href="https://stackoverflow.com/questions/961942/what-is-the-worst-programming-language-you-ever-worked-with/962201">“The Worst Programming Language You Have Ever Worked With”</a>. No disrespect intended; yes, it is clunky, but I love it dearly.</p>
+<p>Be that as it may, if you can tame it Praat can do amazing powerful things from a script, and I use it often for automization of tasks that aren’t even related to acoustic analysis.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> There have been many recent developments in an effort to make Praat scripting more programmer-friendly. For example, <a href="https://pypi.org/project/praat-parselmouth/">Parselmouth</a> is a Python library for Praat. I script in Praat itself for short scripts, and use a <a href="https://github.com/mauriciofigueroa/praatSublimeSyntax">Praat syntax highlighter plugin</a> for the Sublime Text Editor when I am working on longer scripts (perhaps another post one day about best practices in Praat scripting…).</p>
+</div>
+</div>
+<div id="demo" class="section level1">
+<h1>VAS in Praat: Tutorial</h1>
+<p>This is a brief tutorial on using the VAS script (vas.praat).</p>
+<div class="figure">
+<img src="/img/praat_logo.png" />
+
+</div>
+<div id="demo" class="section level3">
+<h3>Demo</h3>
+<video controls="controls" width="800" height="600" name="Video Name" src="/img/vas/vas_demo.mov">
+</video>
+<p>Note: There’s no audio in the clip, but it’s demonstrating what the process would be for two audio clips. <!-- Not shown: if you try to click continue without marking the scale, it reminds you that's not allowed. --></p>
+</div>
+<div id="what-vas.praat-does" class="section level3">
+<h3>What vas.praat does</h3>
+<ul>
+<li>Iterates through a directory of .wav files and plays them one at a time, with options to randomize the presentation and replay a subset of the files for reliability purposes</li>
+<li>Presents the listener with a visual analog scale (VAS)</li>
+<li>Allows the listener to click anywhere along the visual analog scale as they listen to the audio clip, and adjust their rating until they’re ready to move on</li>
+<li>Allows the listener to advance at their own pace, but not before the clip has finished playing, and not without making a mark on the line</li>
+<li>Prohibits the listener from advancing to the next audio clip if they haven’t marked the line, or if they try to advance before the audio is finished playing</li>
+<li>Logs the results to a .csv file for later analysis</li>
+<li>Logs the listener order and progress, allowing the listener to stop and pick up where they left off later (and the possibility to run other listeners in between)</li>
+</ul>
+<p>Using the <a href="http://www.fon.hum.uva.nl/praat/manual/Demo_window.html">Praat demo window</a>, the script essentially sets up an interface for the listener by defining the boundaries of the visual analog scale and “buttons”, and registers whenever the user clicks anywhere within those boundaries. If the click occurs along the line, the screen subtly updates and refreshes the mark. If the click occurs within the button to advance, the script checks whether that’s okay to do, and either advances or alerts the user as to why that can’t happen. It does all this through use use of a few core <em>procedures</em>, i.e., user-defined Praat functions which I’ll walk through in the next post in this series.</p>
+<p>The code for the original core functions came during my search for any kind of Praat functionality for this kind of application. The code provided in <a href="https://uk.groups.yahoo.com/neo/groups/praat-users/conversations/topics/8008">José Joaquín Atria’s Praat scripting forum post</a> about building a “scroll bar” proved to be the most important piece, which I was able to adapt for my purposes. The Praat forum is exceptionally helpful for finding useful code snippets in Praat and understanding more about how they work<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
+<p>In the next post, I’ll walk through the building blocks of how the VAS script works from a technical standpoint. For now, here’s what it’s like to run it.</p>
+</div>
+<div id="assumptions" class="section level3">
+<h3>Assumptions</h3>
+<p>For the script to run, the following criteria must be fulfilled:</p>
+<ul>
+<li>Audio files in .wav format are stored in one directory. All audio files will be played.</li>
+<li>The script, <code>vas.praat</code>, is stored in this same directory</li>
+</ul>
+</div>
+<div id="user-options" class="section level3">
+<h3>User options</h3>
+<p>The form defined at the beginning of the script (and is what pops up when you run the script) contains a bunch of fields for the user to fill out if they wish.</p>
+<div class="figure">
+<img src="/img/vas/form.png" />
+
+</div>
+<p>The user options can be grouped into the following categories:</p>
+<p><strong>Session info [Listener ID, Session number] </strong></p>
+<ul>
+<li>Here the user (researcher) can enter important information for the session at hand. Most important is the listener ID, and whether this is their first session (i.e., the first time setting up a playlist for this listener). If it’s <em>not</em> the first session, the researcher can indicate which session it is on the next line.</li>
+</ul>
+<p><strong>Experiment info [Output filename, anchor labels] </strong></p>
+<ul>
+<li>Things like the name of the output file where the results are logged and the anchor text are likely to be constants for a given experiment.</li>
+</ul>
+<p><strong>Other experimental options [Reliability, Sentence repetition]</strong></p>
+<ul>
+<li>The user can also decide whether to randomize the presentation files; if they don’t, they will be played in alphanumeric order (as they would appear in the folder where they are stored). If they’d like a subset of the files to be repeated, they can specify the percentage of files to repeat (the script will round down to the nearest integer). There is also the option to permit that each audio clip play twice. If unclicked, the script will still give the option for the user to repeat the file, but it won’t do this by default.</li>
+</ul>
+<p><strong>Sanity check [VAS output visible on screen]</strong></p>
+<ul>
+<li>The last option I included mainly as a sanity check to myself. If checked, the script will show the value that the listener has selected according to where they clicked along the line. This is probably not something you’d actually want a listener to see, but can be helpful in <em>absolutely being sure</em> that the script is doing what you want, and can be cross-checked with the output files.</li>
+</ul>
+<p>Once satisfied, the user clicks <code>Okay</code> and the next page pops up for the listener.</p>
+</div>
+<div id="instructions-to-listener" class="section level3">
+<h3>Instructions to listener</h3>
+<div class="figure">
+<img src="/img/vas/instructions.png" />
+
+</div>
+<p>At this point, the researcher may wish to pass control off to the listener. This text can be modified in the script to suit whatever the instructions are you wish to convey. Once the listener presses “Begin”, the VAS screen will appear and the audio will begin playing.</p>
+</div>
+<div id="vas-screen" class="section level3">
+<h3>VAS screen</h3>
+<div class="figure">
+<img src="/img/vas/vas.png" />
+
+</div>
+<p>The user won’t be able to advance until they have made a mark somewhere along the scale, and the audio has finished playing. When they are finished with the last file, a pop-up informs them they’re all done.</p>
+</div>
+<div id="output" class="section level3">
+<h3>Output</h3>
+<p>The main output is <code>vas_responses.csv</code> (or whatever you’ve chosen to name the response file), and looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">filename</th>
+<th align="right">listener</th>
+<th align="right">session</th>
+<th align="right">order</th>
+<th align="right">percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">file3.wav</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">70.1921</td>
+</tr>
+<tr class="even">
+<td align="left">file5.wav</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">58.3563</td>
+</tr>
+<tr class="odd">
+<td align="left">file1.wav</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">66.1045</td>
+</tr>
+</tbody>
+</table>
+<p><strong>“percentage”</strong> refers to the percentage along the line where the user clicked for that file. In this example it refers to “percent intelligible.”</p>
+<p>Each time you run a new listener for the first time (i.e., first session), two other files are created (the following is assuming the listener ID is 01):</p>
+<ul>
+<li><strong>listener_01_order.txt:</strong> logs the original order created during the randomization</li>
+<li><strong>logfile_01.csv:</strong> logs the progress made by the listener</li>
+</ul>
+</div>
+<div id="multiple-sessions-for-a-listener" class="section level3">
+<h3>Multiple sessions for a listener</h3>
+<p>If the listener needs to leave before finishing all the audio files, you can just exit the script. The next time you run that particular listener, type their same ID into the form (make sure you label it the same way, i.e., 01 or 1, etc.), <em>uncheck</em> “First session” and type the accurate session number into the next field.</p>
+<p>In this case, the script looks up their order and their progress, the two files that were generated during their first session. It looks up the last file they did in their logfile, finds it in the order file, and starts with the next file on the list in the order file.</p>
+<p>⚠️ <strong>Important</strong>: At the present time, there’s no check built in to make sure you haven’t already run that listener. Here you just have to be diligent. Future versions will be diligent for you. It also doesn’t technically matter what you enter as a session number; all that really matters is that you have or haven’t clicked “First session”; the session number is just logged for your reference.</p>
+</div>
+<div id="outstanding-additions-id-like-to-make-but-havent-yet" class="section level3">
+<h3>Outstanding additions I’d like to make but haven’t yet</h3>
+<ul>
+<li>Should run from any permanent location</li>
+<li>Instructions should be more readily modifiable for user</li>
+<li>Should check whether listener ID/session combo has already been entered</li>
+<li>Progress bar/indicator/some output relating how many files are left to do</li>
+<li>Make as Praat plugin</li>
+<li>Other things I haven’t thought of yet? Quite possibly…</li>
+</ul>
+<p>Hopefully somebody somewhere finds this useful. In any case, hopefully at least future me finds it more difficult to forget what I did as a result of this and the subsequent posts in this series. We have successfully used the script for a couple of listening experiments in our lab, and I’m pretty happy with how it’s turned out. Praat is clunky, sure, but I love it anyways, and I have to say it did just fine for the task at hand (without taking years off my life to figure out 🙌)</p>
+<div id="references" class="section level4 unnumbered">
+<h4>References</h4>
+<div id="refs" class="references">
+<div id="ref-yorkston1996">
+<p>Yorkston, K. M., Strand, E. A., &amp; Kennedy, M. R. (1996). Comprehensibility of dysarthric speech: Implications for assessment and treatment planning. <em>American Journal of Speech-Language Pathology</em>, <em>5</em>, 55–66. <a href="https://doi.org/10.1044/1058-0360.0501.55" class="uri">https://doi.org/10.1044/1058-0360.0501.55</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Thanks to <a href="https://twitter.com/fvbrenk">Frits van Brenk</a> via Twitter for pointing me in the direction of a the <a href="">Praat NKI TEVA app</a>, which, while I didn’t use directly, made me aware of the Demo Window and provided some solid working examples so I knew what to Google.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>In fact, I believe I have come to use Praat the way others may use bash scripts; for file renaming, text manipulation, etc. Perhaps once again not the <em>best</em> tool for the job, but good enough for me in many cases.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>The <a href="https://uk.groups.yahoo.com/neo/groups/praat-users/conversations/topics">Praat Yahoo forum</a> is the Stack Overflow of Praat.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
