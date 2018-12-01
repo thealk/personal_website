@@ -14,7 +14,7 @@ tags:
   - slp
   - slpeeps
   - acoustics
-  - visual analogue scale
+  - visual analog scale
   - vas
 header:
   caption: ''
@@ -101,7 +101,7 @@ In our lab, we've frequently presented listeners with printed forms that they ma
 
 - Praat is the workhorse of acoustic analysis of speech. It is an incredibly powerful piece of software hidden behind an incredibly underwhelming logo. It also has its own scripting language that allows you to automate the functions you can perform with the software. A key feature for implementing this project was the fact that it also has a "Demo Window" that allows you to code up the kind of interface I had in mind [^1], as well as the ability to seamlessly integrate audio files.
 
-[^1]: Thanks to [Frits van Brenk](https://twitter.com/fvbrenk) via Twitter for pointing me in the direction of a the [Praat NKI TEVA app](), which, while I didn't use directly, made me aware of the Demo Window and provided some solid working examples so I knew what to Google. 
+[^1]: Thanks to [Frits van Brenk](https://twitter.com/fvbrenk) via Twitter for pointing me in the direction of a the [Praat NKI TEVA app](http://www.fon.hum.uva.nl/rob/NKI_TEVA/TEVA/praat_module/TEVAexpanded.praat), which, while I didn't use directly, made me aware of the Demo Window and provided some solid working examples so I knew what to Google. 
 
 
 Ultimately, I chose Praat. I think all of these are great options, but in the end it came down to what was going to be the most customizable and efficient option for me. I've used Praat for more than a few years now, and while I recognize its pitfalls and relative weaknesses compared to other programming languages, I have a very warm spot in my heart for it. In the interest of efficiency (I've got less than a year left of this PhD...), I knew I could likely complete what I wanted to do in easily a third or less of the time it would take me to learn waht I needed to do in PsychoPy, MatLab, or R Shiny, and offered me more customizability than an already-built web app. The finished script can also easily be used by somebody who is *not* as familiar with Praat, and I may turn it into a plugin for even easier implementation one of these days. But today is not that day.
