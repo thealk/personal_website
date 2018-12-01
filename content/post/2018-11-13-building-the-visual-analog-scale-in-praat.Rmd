@@ -1,0 +1,186 @@
+---
+title: Building the visual analog scale in Praat
+author: ''
+date: '2018-11-13'
+slug: building-the-visual-analog-scale-in-praat
+categories:
+  - Praat
+  - speech science
+  - intelligibility
+tags:
+  - praat
+  - canadianSLPs
+  - phd
+  - speech science
+  - slp
+  - slpeeps
+  - acoustics
+  - intelligibility
+header:
+  caption: ''
+  image: ''
+---
+
+
+This is the second post in a series
+
+
+
+
+## Building blocks (Praat procedures)
+
+
+### Set up dimensions
+
+Here we set up the demo window axes, set the color, font, and a default "continue" that will be important later on:
+
+```
+demo Axes: 0, 100, 100, 0	
+background$ = "white"
+demo Times
+continue = 0
+```
+
+Next we set up the dimensions of the elements that are going to be reoccurring. The VAS line is defined as a very thin box that takes up 70% of the width of the screen. The margins are defined around the vertical dimensions of the line, and are what will be the "clickable" region (so, some vertical error imprecision allowed; the user doesn't have to click precisely on the line, they can click slightly above or below it).
+
+```
+# "Scroll bar" dimensions
+line["x0"] = 15
+line["x1"] = 85
+line["y0"] = 20
+line["y1"] = 21
+line["y0margin"] = 1
+line["y1margin"] = 40
+```
+
+### Procedures
+
+**drawLine()** Here we have the first procedure that will be used to actually print the line to the demo window. Whenever we want to execute this procedure, we call it with `\@drawLine()`. We paint the line based on the coordinates provided above, and include text on either side. The anchor text is provided by the user at the very beginning of the script. Their values are currently "0% intelligible" and "100% intelligible", but could be anything.
+
+```
+procedure drawLine ()
+demo Erase all
+demo Paint rectangle: "grey", line["x0"], line["x1"], line["y0"], line["y1"]
+demo Text: line["x0"]-15, "Centre", line["y0"], "Half", left_anchor$
+demo Text: line["x1"]+15, "Centre", line["y0"], "Half", right_anchor$
+endproc
+```
+
+**drawButton**: Next we define the procedure to draw the main button: Continue. The boolean variable `continue` is set here to 0, but will be changed to 1 when the listener clicks it, at which point we'll determine whether that's okay to do. 
+
+```
+procedure drawButton ()
+continue = 0
+demo Paint rectangle: "pink", 30, 70, 70, 84
+demo Text: 50, "centre", 77, "half", "Continue"
+endproc
+```
+
+
+
+```
+procedure drawText ()
+# Get value from the "scroll bar"
+@lineValue()
+# If there was a value, print it
+if lineValue.value != undefined
+.string$ = fixed$(lineValue.value, 2) + "\% "
+demo Text: 50, "Centre", 60, "Half", .string$
+endif
+endproc
+
+procedure lineValue ()
+	# This is the percentage of the box clicked; different from just screen value
+	# Box value is undefined unless the user clicked in the box
+	.value = undefined
+	@clickedOnLine()
+	if clickedOnLine.return
+	.value = demoX() - line["x0"]
+	.value = .value * 100 / (line["x1"] - line["x0"])
+	endif
+	endproc
+
+	procedure clickedOnLine ()
+	# Check whether user clicked in the acceptable margins of the line
+	# x margins remain the same as original length (x0, x1)
+	# y margin allows for users to click above or below the line
+	.return = 0
+	if demoX ( ) >= line["x0"] and demoX ( ) < line["x1"] and
+	... demoY ( ) >= line["y0margin"] and demoY ( ) < line["y1margin"]
+
+	.return = 1
+	endif
+endproc
+
+
+procedure drawTick ()
+	# Draw a vertical line where the user clicked
+
+	# Get value from the "scroll bar"
+	@lineValue()
+	# Clear the text area
+	demo Paint rectangle: background$, 0, 100, line["y1"], 100
+
+	@drawButton()
+	# If there was a value, print it
+	if lineValue.value != undefined
+		@drawLine()
+		# Draw the "tick" at the position of the click
+		pos = demoX()
+		demo Paint rectangle: "black", pos, pos+0.1, line["y0"]-5, line["y1"]+5
+
+	# Select in form if you want to see the output of drawText() as a sanity check
+		if show_vas_output == 1
+			@drawText()
+		endif
+		@drawButton()
+		@drawPlayAgainButton
+	endif
+
+endproc
+
+
+procedure drawPlayAgainButton()
+	demo Paint rectangle: "grey", 90, 110, 100, 110
+	demo Text: 100, "centre", 105, "half", "Repeat"
+endproc
+
+procedure refreshScreen()
+	demo Font size: 24
+	@drawLine()
+	@drawButton()
+	@drawPlayAgainButton()
+endproc
+
+########################
+# INSTRUCTIONS
+# ALLOW THE USER TO DECIDE WHEN THEY'RE READY TO START
+########################
+demo 24
+demo Text: 50, "centre", 0.0, "half", "Instructions"
+demo Text: 50, "centre", 0.0, "half", ""
+demo 14
+demo Text: 50, "centre", 20, "half", "For each spoken utterance, please indicate your rating on the line from low to high intelligibility."
+demo Text: 50, "centre", 30, "half", "You will not be able to replay the sound, though you are able to adjust your rating if you'd like." 
+demo Text: 50, "centre", 40, "half", "Clicking the Continue button will allow you to advance to the next utterance."
+demo Text: 50, "centre", 40, "half", ""
+demo 24
+demo Text: 50, "centre", 60, "half", "Click the button when you're ready to begin."
+
+demo Paint rectangle: "grey", 30, 70, 70, 84
+demo 24
+demo Text: 50, "centre", 77, "half", "Begin"
+
+while demoWaitForInput ( )
+	if demoClickedIn (30, 70, 70, 84)
+		demo Erase all
+		goto BEGIN
+	endif
+endwhile
+
+```
+
+
+The VAS script relies heavily on Praat's Dmo 
+
+The script essentially sets up the dimensions of the demo window, then prints different aesthetic components to it (the scale, the text, the buttons, etc.) 
