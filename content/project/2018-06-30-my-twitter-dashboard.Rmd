@@ -106,7 +106,6 @@ my_table <- datatable(my_retweets,
 
 #my_table <- formatStyle(my_table, columns = 1:4, fontSize = '70%')
 my_table <- formatStyle(my_table, columns = 2, width = '800px')
-View(my_table[[3]])
 
 
 
