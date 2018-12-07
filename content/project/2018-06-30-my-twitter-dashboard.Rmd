@@ -58,6 +58,13 @@ my_retweets <- get_timeline(username, n=100) %>%
      select("created_at", "text", "retweet_text", "hashtags", "urls_expanded_url")%>%
      arrange(desc(created_at))
 
+# If retweet text is not empty, get rid of my text (redundant)
+for(i in 1:nrow(my_retweets)){
+     if(is.na(my_retweets$retweet_text[i])==FALSE){
+          my_retweets$text[i] <- NA
+     }
+}
+
 # Tutorial done with likes and not retweets
 #my_likes  <- get_favorites(username, n = 100) %>% 
 #     select("created_at", "screen_name", "text", "urls_expanded_url") %>%
@@ -99,7 +106,8 @@ my_table <- datatable(my_retweets,
 
 #my_table <- formatStyle(my_table, columns = 1:4, fontSize = '70%')
 my_table <- formatStyle(my_table, columns = 2, width = '800px')
-my_table
+View(my_table[[3]])
+
 
 
 
