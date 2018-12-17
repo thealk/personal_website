@@ -1,5 +1,5 @@
 +++
-title = "Examining Factors Influencing the Viability of Automatic Acoustic Analysis of Child Speech"
+title = "Examining factors influencing the viability of automatic acoustic analysis of child speech"
 date = "2018-09-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
