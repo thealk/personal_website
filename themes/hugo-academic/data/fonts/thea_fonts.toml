@@ -1,0 +1,15 @@
+# Font style metadata
+name = "Thea_fonts"
+
+# Optional Google font URL
+google_fonts = "Montserrat|Merriweather|Roboto"
+
+# Font families
+heading_font = "Montserrat"
+body_font = "Merriweather"
+nav_font = "Roboto"
+mono_font = "Merriweather Mono"
+
+# Font size
+font_size = "18"
+font_size_small = "14"
