@@ -3,7 +3,7 @@ title = "Deep brain stimulation of the subthalamic nucleus parameter optimizatio
 date = "2018-02-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Thea Knowles", "Scott Adams", "Anita Abeyesekera", "Cynthia Mancinelli", "Greydon Gilmore", "Mandar Jog"]
+authors = ["**Thea Knowles**", "Scott Adams", "Anita Abeyesekera", "Cynthia Mancinelli", "Greydon Gilmore", "Mandar Jog"]
 
 # Publication type.
 # Legend:

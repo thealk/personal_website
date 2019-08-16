@@ -3,7 +3,7 @@ title = "Automatic forced alignment on child speech: Directions for improvement"
 date = "2015-01-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Thea Knowles", "Meghan Clayards", "Morgan Sonderegger", "Michael Wagner", "Aparna Nadig", "Kristine H. Onishi"]
+authors = ["**Thea Knowles**", "Meghan Clayards", "Morgan Sonderegger", "Michael Wagner", "Aparna Nadig", "Kristine H. Onishi"]
 
 # Publication type.
 # Legend:

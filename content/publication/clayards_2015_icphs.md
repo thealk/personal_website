@@ -3,7 +3,7 @@ title = "Prominence enhances voicelessness and not place distinction in English 
 date = "2015-01-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Meghan Clayards, Thea Knowles"]
+authors = ["Meghan Clayards, **Thea Knowles**"]
 
 # Publication type.
 # Legend:

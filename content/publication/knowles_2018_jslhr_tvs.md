@@ -3,7 +3,7 @@ title = "Examining factors influencing the viability of automatic acoustic analy
 date = "2018-09-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Thea Knowles", "Meghan Clayards", "Morgan Sonderegger"]
+authors = ["**Thea Knowles**", "Meghan Clayards", "Morgan Sonderegger"]
 
 # Publication type.
 # Legend:

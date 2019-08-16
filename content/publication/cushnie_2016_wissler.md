@@ -3,7 +3,7 @@ title = "Effects of multi-talker noise on the acoustics of voiceless stop conson
 date = "2016-01-01"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Daryn Cushnie-Sparrow", "Scott Adams", "Thea Knowles", "Talia M. Leszcz", "Mandar Jog"]
+authors = ["Daryn Cushnie-Sparrow", "Scott Adams", "**Thea Knowles**", "Talia M. Leszcz", "Mandar Jog"]
 
 # Publication type.
 # Legend:
