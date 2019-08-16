@@ -16,7 +16,7 @@ image_preview = "twitter_dashboard.png"
 tags = ["twitter", "code"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://theaknowles.com/files/twitter_dashboard/2018-06-30-my-twitter-dashboard.html"
+external_link = "https://theaknowles.com/files/twitter_dashboard/2018-06-30-my-twitter-dashboard.rmd"
 
 # Does the project detail page use math formatting?
 math = false
