@@ -51,15 +51,18 @@ defaultContentLanguageInSubdir = false
 
   # Your details.
   name = "Thea Knowles"
-  role = "MClSc/PhD candidate in Communication Sciences & Disorders (Speech-Language Pathology)"
+  role = "Assistant Professor in Communicative Disorders and Sciences"
+  #role = "MClSc/PhD candidate in Communication Sciences & Disorders (Speech-Language Pathology)"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Western University", url = "http://www.uwo.ca" } ]
+  organizations = [ { name = "University at Buffalo", url = "https://www.buffalo.edu/"}]
+  #organizations = [ { name = "Western University", url = "http://www.uwo.ca" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "TheaKnowles.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "tknowle3@uwo.ca"
+  email = "theaknow@buffalo.edu"
+  #email = "tknowle3@uwo.ca"
   #address = "Elborn College"
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
   #phone = "888 888 88 88"
@@ -194,7 +197,7 @@ defaultContentLanguageInSubdir = false
     #   1 = Detailed
     #   2 = APA
     #   3 = MLA
-    publication_format = 3
+    publication_format = 2
     
   # Configuration of project pages.
   [params.presentations]
@@ -206,7 +209,7 @@ defaultContentLanguageInSubdir = false
     #   1 = Detailed
     #   2 = APA
     #   3 = MLA
-    publication_format = 3
+    publication_format = 2
 
   # Social/Academic Networking
   #
@@ -229,7 +232,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:tknowle3@uwo.ca"
+    link = "mailto:theaknow@buffalo.edu"
     
   [[params.social]]
     icon = "researchgate"
