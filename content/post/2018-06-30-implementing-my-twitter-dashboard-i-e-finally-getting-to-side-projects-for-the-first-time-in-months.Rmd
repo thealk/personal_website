@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 *As seems to be habit now, this post turned out a lot longer than I meant for it to. Quick links:*
 
 - Check out [Joseph Stachelek\'s helpful tutorial](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/) to implement this yourself (trust me, despite the upcoming wall of text, I made very, very few actual changes to his original implementation, so you should just go straight there for the how-to)
-- Check out *my* [finished project here](http://theaknowles.com/misc/twitter_dashboard/my-twitter-dashboard/)
+- Check out *my* (now defunct) [finished project here](http://theaknowles.com/misc/twitter_dashboard/my-twitter-dashboard/)
 
 
 # Saving tweets for later: Hacky at best
