@@ -20,7 +20,7 @@ header:
 <p><em>As seems to be habit now, this post turned out a lot longer than I meant for it to. Quick links:</em></p>
 <ul>
 <li>Check out <a href="https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/">Joseph Stachelek's helpful tutorial</a> to implement this yourself (trust me, despite the upcoming wall of text, I made very, very few actual changes to his original implementation, so you should just go straight there for the how-to)</li>
-<li>Check out <em>my</em> <a href="http://theaknowles.com/project/my-twitter-dashboard/">finished project here</a></li>
+<li>Check out <em>my</em> <a href="http://theaknowles.com/misc/twitter_dashboard/my-twitter-dashboard/">finished project here</a></li>
 </ul>
 <div id="saving-tweets-for-later-hacky-at-best" class="section level1">
 <h1>Saving tweets for later: Hacky at best</h1>
@@ -40,7 +40,8 @@ header:
 <center>
 <blockquote class="twitter-tweet" data-lang="en">
 <p lang="en" dir="ltr">
-Use ❤️s as bookmarks? 👨 🍳 rtweet × DT ⇩<br>🐦 “Making a twitter dashboard with R” by <a href="https://twitter.com/__jsta?ref_src=twsrc%5Etfw"><span class="citation">@__jsta</span></a> <a href="https://t.co/nPvkh4HhaK">https://t.co/nPvkh4HhaK</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/DeOfCgLXQs">pic.twitter.com/DeOfCgLXQs</a>
+Use ❤️s as bookmarks? 👨
+🍳 rtweet × DT ⇩<br>🐦 “Making a twitter dashboard with R” by <a href="https://twitter.com/__jsta?ref_src=twsrc%5Etfw"><span class="citation">@__jsta</span></a> <a href="https://t.co/nPvkh4HhaK">https://t.co/nPvkh4HhaK</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/DeOfCgLXQs">pic.twitter.com/DeOfCgLXQs</a>
 </p>
 — Mara Averick (<span class="citation">@dataandme</span>) <a href="https://twitter.com/dataandme/status/993963029564882944?ref_src=twsrc%5Etfw">May 8, 2018</a>
 </blockquote>
@@ -48,7 +49,7 @@ Use ❤️s as bookmarks? 👨 🍳 rtweet × DT ⇩<br>🐦 “Making a twitter
 </center>
 <p>This sounded immediately appealing to me so, quickly and hackishly, I threw <em>all</em> of my don’t-forget-this-thing strategies at it: Liked it, RT’d it, DM’d myself it, and stuck it on my Trello board.</p>
 <p>And there it has sat for the last 6 weeks, gathering metaphorical dust in only the ways forgotten corners of the internet can.</p>
-<p>The “Wistful to do’s” section of my Trello board gets little love compared to the rest of it<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. It has been quite a busy last couple of months, with wrapping up one study, getting another one off the ground, and completing a full-time clinical placement. So I’m not beating myself up on this at the moment. But today seemed a good day to tackle it. I had made sure to budget some time to work on fun stuff this weekend, so seemed like a good opportunity to sit on my air conditioned back porch and see if I could knock one or two things off that I’d been meaning to tackle<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>The “Wistful to do’s” section of my Trello board gets little love compared to the rest of it<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. It has been quite a busy last couple of months, with wrapping up one study, getting another one off the ground, and completing a full-time clinical placement. So I’m not beating myself up on this at the moment. But today seemed a good day to tackle it. I had made sure to budget some time to work on fun stuff this weekend, so seemed like a good opportunity to sit on my air conditioned back porch and see if I could knock one or two things off that I’d been meaning to tackle<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
 <center>
 </div>
 <div id="twitter-dashboard-tutorial" class="section level1">
@@ -80,13 +81,14 @@ Use ❤️s as bookmarks? 👨 🍳 rtweet × DT ⇩<br>🐦 “Making a twitter
 <h1>To Do ✅</h1>
 <p>I’ll probably still throw especially intriguing tutorials on my Trello board as a way to flag them, but I am very happy to now have a curated space to peruse the things I thought future-me would find useful. Saturday afternoon well spent, and a unicorn to-do finally moved over into Ryan Gosling’s very capable hands.</p>
 <center>
-<img src="/img/ryan_gosling_done.png" alt="img" /> Thanks boo 😘
+<img src="/img/ryan_gosling_done.png" alt="img" />
+Thanks boo 😘
 </center>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Perhaps that is a self-fulfilling prophecy, as I have captioned it with a unicorn and included a “lolz” mocking me in its title… note to self to revisit less self-defeating strategies at some point in the future…<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Perhaps that is a self-fulfilling prophecy, as I have captioned it with a unicorn and included a “lolz” mocking me in its title… note to self to revisit less self-defeating strategies at some point in the future…<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2">I’ll admit that part of my reasoning for tackling this today was due to the fact that 1) it was approximately eight bazillion degrees outside today, so hot that even my dog refused to spend much time with me outdoors, cutting our attempt at a run short, and 2) I spent an embarrasingly long and anxiety-inducing time scrolling through this Twitter thread last night and came to the conclusion that I have very little to contribute as of late:
 <center>
 <blockquote class="twitter-tweet" data-lang="en">
@@ -97,6 +99,6 @@ You know what I'd like to hear more about, the lives of academics. No, not the j
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
-<a href="#fnref2">↩</a></li>
+<a href="#fnref2" class="footnote-back">↩</a></li>
 </ol>
 </div>
