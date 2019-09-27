@@ -13,7 +13,7 @@ image_preview = "rladies-dissertating.jpeg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["rstats", "rladies", "dissertation", "writing", "code"]
+tags = ["rstats", "rladies", "dissertation", "writing", "code", "research"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://bookdown.org/thea_knowles/dissertating_rmd_presentation/"

@@ -14,7 +14,7 @@ authors = ["**Thea Knowles**", "Meghan Clayards", "Morgan Sonderegger", "Michael
 # 4 = Technical report
 # 5 = Book
 # 6 = Book chapter
-publication_types = ["2"]
+publication_types = ["1"]
 
 # Publication name and optional abbreviated version.
 publication = "In *Proceedings of Meetings on Acoustics*, IEEE."

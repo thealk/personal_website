@@ -27,7 +27,7 @@ math = false
 #caption = ":movie_camera:"
 
 +++
-:newspaper: ["Speech in Parkinson’s disease: The potential role of amplification devices""](https://parkinsonsociety.ca/wp-content/uploads/2018/07/Parkinson-68-complete-for-web-Compressed-003-final.pdf)
+:newspaper: ["Speech in Parkinson’s disease: The potential role of amplification devices"](https://parkinsonsociety.ca/wp-content/uploads/2018/07/Parkinson-68-complete-for-web-Compressed-003-final.pdf)
 
 - See page 10 of the Parkinson Society of Southwestern Ontario newsletter to read a short summary of our clinical study of voice amplification devices in Parkinson's disease
 
