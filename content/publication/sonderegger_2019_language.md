@@ -1,6 +1,6 @@
 +++
 title = "Structured heterogeneity in Scottish stops over the twentieth century"
-date = ""
+#date = ""
 # Remove weight when published
 weight = 1
 
