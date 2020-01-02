@@ -274,7 +274,7 @@ defaultContentLanguageInSubdir = false
 
 [[menu.main]]
   name = "CV"
-  url = "../files/cv/KnowlesCV_academic_2019.pdf"
+  url = "../files/cv/KnowlesCV_academic_2020.pdf"
   weight = 2
 
 [[menu.main]]
