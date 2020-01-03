@@ -51,24 +51,43 @@ The Canadian government immigration website suggests you use a “travel journal
 <div id="load-libraries" class="section level2">
 <h2>Load libraries</h2>
 <pre class="r"><code>library(jsonlite)
-library(ggmap)
-library(dplyr)
-library(stringr)
+library(ggmap)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Google&#39;s Terms of Service: https://cloud.google.com/maps-platform/terms/.</code></pre>
+<pre><code>## Please cite ggmap if you use it! See citation(&quot;ggmap&quot;) for details.</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(stringr)
 library(tidyr)</code></pre>
+</div>
+<div id="get-google-api" class="section level2">
+<h2>0. Get Google API</h2>
+<p>You need this to be able to use the geocoding functions in ggmap, as well as to be able to plot.</p>
+<ul>
+<li>Need to register for a temporary Google API key</li>
+</ul>
+<pre class="r"><code>register_google(&quot;your-secret-api-key&quot;)</code></pre>
 </div>
 <div id="download-your-location-history-from-your-google-account" class="section level2">
 <h2>1. Download your location history from your Google Account</h2>
 <ul>
 <li>Download your data from <a href="https://takeout.google.com/settings/takeout">Google takeout</a>.</li>
 <li>Be sure to only select “Location History.”</li>
-<li>This can take a little while (it took about 20 minutes for me to download the last 4 years, which is my entire Maps timeline). The final output is a json file called <code>Location History.json</code>.</li>
+<li>This can take a little while (it took about 30 minutes for me to download the last 4 years, which is my entire Maps timeline). The final output is a json file called <code>Location History.json</code>.</li>
 <li>You can also do this from within <a href="https://www.google.com/maps">Google Maps</a> by going to “Your Data in Maps” &gt;&gt; “Download your Maps Data”</li>
 </ul>
 </div>
 <div id="parse-the-location-history-file" class="section level2">
 <h2>2. Parse the location history file</h2>
 <ul>
-<li>This is done using the R package <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><code>jsonlite</code></a>. I moved my .json output file to my R project folder and ran the following. This may take a few minutes.</li>
+<li>This is done using the R package <a href="https://cran.r-project.org/web/packages/jsonlite/index.html"><code>jsonlite</code></a>. I moved my .json output file to my R project folder and ran the following. This also took a couple minutes.</li>
 </ul>
 <pre class="r"><code>lh &lt;- &quot;Location History.json&quot;
 maps_data &lt;- read_json(lh, simplifyVector = TRUE)</code></pre>
@@ -78,8 +97,12 @@ loc$time = as.POSIXct(as.numeric(loc$timestampMs)/1000, origin = &quot;1970-01-0
 <p>You can check your earliest and most recent maps data time stamps using <code>min()</code> and <code>max()</code> functions.</p>
 <pre class="r"><code>min(loc$time)
 max(loc$time)</code></pre>
+</div>
+<div id="tidy-the-location-history" class="section level2">
+<h2>3. Tidy the location history</h2>
 <p>Latitude and longitude are recorded in Google in E7 format. You need to divide the original longitude/latitude values by 10^7 to get standard coordinate formatting.</p>
-<p>I also found it helpful to round my final coordinates. The more decimal places you include, the more precise your location identification will be. In my case, all I really cared about was whether I could reliably capture border crossings. Some light googling informed me that rounding coordinates to the tens gives you a resolution of 11.1 km, roughly allowing you to <a href="https://gis.stackexchange.com/questions/8650/measuring-accuracy-of-latitude-and-longitude">“distinguish the position of one large city from a neighboring city”</a>. This <em>greatly</em> reduces the amount of data you have to work with, which speeds things up tremendously. To test whether this was sufficient, I made a temp file of 1 days worth of location history on a date that I know I crossed from Ontario to New York. I decided that rounding to 0 decimal places was actually sufficient to capture what I wanted, knowing that this may mean I don’t capture every single day with 100% accuracy (for example, this runs the risk of days that I spent <em>near</em> a border being counted as <em>crossing</em> a border - a risk I felt was worth the time saved by the data reduction). To prepare for further reduction, I also added a coordinates column (<code>coord</code>).</p>
+<p>I also found it helpful to round my final coordinates. The more decimal places you include, the more precise your location identification will be. In my case, all I really cared about was whether I could reliably capture border crossings. Some <a href="https://en.wikipedia.org/wiki/Decimal_degrees">light Wikipediaing</a> informed me that rounding coordinates to the tens gives you a resolution of 11.1 km, roughly allowing you to distinguish major cities. Zero decimal places, i.e., rounding to the nearest integer, allows for 111.1 km precision, which can unambiguously capture large regions and countries (see also <a href="https://gis.stackexchange.com/questions/8650/measuring-accuracy-of-latitude-and-longitude">here</a>). Rounding <em>greatly</em> reduces the amount of data you have to work with, which speeds things up tremendously. It’s also simply not <em>necessary</em>, IMHO, at least for this project, to know your location down to 1.11 meters or less.</p>
+<p>To test whether rounding to the nearest integer was sufficient, I made a temp file of 1 days worth of location history on a date that I know I crossed from Ontario to New York. This allowed me to confirm that rounding to 0 decimal places was more or less enough to capture what I wanted, knowing that this may mean I don’t capture every single day with 100% accuracy (for example, this runs the risk of days that I spent <em>near</em> a border being counted as <em>crossing</em> a border - a risk I felt was worth the time saved by the data reduction). To prepare for further reduction, I also added a coordinates column (<code>coord</code>).</p>
 <pre class="r"><code>loc &lt;- loc %&gt;% mutate(
      date = str_sub(time,1,10),
      time = str_sub(time,12,19),
@@ -88,7 +111,7 @@ max(loc$time)</code></pre>
      coord = paste(lon,lat,sep=&quot;_&quot;)
 ) </code></pre>
 <p>I grouped the location data by date and coordinates - that is, one row for each unique date-coordinate combination. Since I had rounded my coordinates to 0 decimals earlier, this meant that I got one row for approximately every 111 km. Importantly, I was able to collapse over days that I drove around a single city or over shorter distances. This allowed me to speed up further parsing below.</p>
-<pre class="r"><code>loc_reduced &lt;- loc %&gt;% 
+<pre class="r"><code>loc &lt;- loc %&gt;% 
   group_by(date,coord) %&gt;% 
   summarize(n=n()) %&gt;% 
   separate(lonlat, c(&quot;lon&quot;,&quot;lat&quot;), sep=&quot;_&quot;, remove=FALSE) %&gt;%
@@ -96,31 +119,36 @@ max(loc$time)</code></pre>
          lat = as.numeric(lat)) %&gt;%
   ungroup()</code></pre>
 <p>At this point, I created a temp file to test one day of travels. You could just as easily a month or specified time span.</p>
-<pre class="r"><code>tmp_day &lt;- loc_reduced %&gt;% 
+<pre class="r"><code>tmp_day &lt;- loc %&gt;% 
   filter(date == &quot;2019-10-20&quot;) # Look just at Oct 20 2019
-tmp_month &lt;- loc_reduced %&gt;%
+tmp_month &lt;- loc %&gt;%
   filter(str_sub(date,1,6)==&quot;2019-10&quot;) # Look just at Oct 2019</code></pre>
 </div>
 <div id="coordinates-country-reverse-geocoding" class="section level2">
-<h2>Coordinates 👉 Country: Reverse geocoding</h2>
+<h2>4. Coordinates 👉 Country: Reverse geocoding</h2>
 <p><em>Geocoding</em> allows you to convert addresses into geographic coordiantes.
 <em>Reverse geocoding</em> allows you to do the opposite: convert coordinates to addresses.
-The <code>ggmap</code> package provides a function <code>revgeocode()</code> to do just this. Next I created a small function to use <code>revgeocode()</code> to get the address from my location data. I then used the <code>stringr</code> package to extract the country, which is always the last element of the list produced by <code>revgeocode()</code>.</p>
-<pre class="r"><code>get_country &lt;- function(lon,lat){
+The <code>ggmap</code> package provides a function <code>revgeocode()</code> to do just this. Next I created a small function to use <code>revgeocode()</code> to get the address from my location data. I then used the <code>stringr</code> package to extract the country, which is always the last element of the list produced by <code>revgeocode()</code>. This function returns either just the country, or the full address retrieved from Google.</p>
+<pre class="r"><code>get_country &lt;- function(lon,lat, out=c(&quot;country&quot;,&quot;address&quot;)){
   address &lt;- suppressMessages(
     revgeocode(
       as.vector(
         c(as.numeric(lon),
-          as.numeric(lat))))) %&gt;% 
-    str_split(., pattern = &quot;, &quot;)
+          as.numeric(lat)))))
+  # Split address by commas
+  address_split &lt;- str_split(address, pattern = &quot;, &quot;)
+  # Country is always the last element
+  l &lt;- length(address_split[[1]]) 
+  country &lt;- address_split[[1]][l]
   
-  # Get n of items in address
-  l &lt;- length(address[[1]]) 
-  
-  # Country is always last element
-  country &lt;- address[[1]][l]
+  if(is.na(country)){country &lt;- &quot;NA&quot;}
+  if(is.na(address)){address &lt;- &quot;NA&quot;}
     
-  return(country)
+  if(out==&quot;country&quot;){
+    return(country)
+  }else if(out==&quot;address&quot;){
+    return(address)
+  }
 }</code></pre>
 <p>I then created another function to determine, for a given data point, whether I was or was not in a given country (e.g., Canada). This function returns 1 if “country” equals “Canada”, and 0 if not. This allows me to sum the days spent in Canada.</p>
 <pre class="r"><code>visited_country &lt;- function(x, country = &quot;Canada&quot;){
@@ -129,11 +157,21 @@ The <code>ggmap</code> package provides a function <code>revgeocode()</code> to 
   }else{visit &lt;- 0}
 }</code></pre>
 <p>Next I used <code>mapply()</code> to iterate over each observation in my location history data, applying my <code>get_country()</code> and <code>visited_country()</code> functions to each row.</p>
-<pre class="r"><code>loc_reduced$country &lt;- mapply(get_country, as.numeric(loc_reduced$lon),as.numeric(loc_reduced$lat))
+<pre class="r"><code># Get country
+loc$country &lt;- mapply(get_country, 
+                      loc$lon,loc$lat, 
+                      out = &quot;country&quot;)
+# Get address
+loc$address &lt;- mapply(get_country,
+                      loc$lon,loc$lat,
+                      out = &quot;address&quot;)
 
-loc_reduced$visited &lt;- mapply(visited_country2, loc_reduced$countries, &quot;Canada&quot;)</code></pre>
+# Log whether I visited Canada
+loc$visited &lt;- mapply(visited_country, 
+                      loc$countries, 
+                      &quot;Canada&quot;)</code></pre>
 <p>Finally, I computed how many days I was in Canada by grouping my data by date and summing my visits.</p>
-<pre class="r"><code>days_in_canada &lt;- loc_reduced %&gt;%
+<pre class="r"><code>days_in_canada &lt;- loc %&gt;%
   group_by(date) %&gt;%
   summarize(n_in_canada = sum(visited)) %&gt;%
   ungroup() %&gt;%
@@ -142,22 +180,45 @@ loc_reduced$visited &lt;- mapply(visited_country2, loc_reduced$countries, &quot;
 sum(days_in_canada$in_canada)</code></pre>
 </div>
 </div>
+<div id="some-odd-findings" class="section level1">
+<h1>Some odd findings</h1>
+<p>While for the most part, these points appear to be confirmed by memory and calendar notes, a few oddities arose. According to my maps data, I visited the following countries:</p>
+<pre class="r"><code>unique(loc$countries)</code></pre>
+<p>One easy-to-fix issue is that, for whatever reason, the US is coded most of the time as “USA” and once as “United States”. For my purposes, this doesn’t matter, but it probably makes sense to collapse these two:</p>
+<pre class="r"><code>loc &lt;- loc %&gt;%
+  mutate(country = ifelse(country==&quot;United States&quot;,&quot;USA&quot;,country))</code></pre>
+<p>Regarding the other countries I’ve purportedly “visited”, this breakdown isn’t 100% accurate. I have never actually visited Thailand or Indonesia. he high number of NAs are a bit worrisome too.</p>
+<p>Closer inspection reveals that most, but not all, of these blips occured on days I was travelling to or around Israel (where my partner was a post-doc for 2 years). I recall Maps having a hard time localizing us sometimes, so perhaps there is something to do with Google’s satellite signal or access in this region. To be fair, the Google Maps timeline interface doesn’t show these blips, so whatever’s happening is getting parsed out by Google Map’s final algorithms.</p>
+<p>At the end of the day, all I care about is whether it accurately logs whether I was in Canada (even for just a single time point) on a given day. This does seem to be accurate. Even if misses a few days, that’s still accurate enough for me at this stage.</p>
+</div>
+<div id="plotting-optional" class="section level1">
+<h1>Plotting (optional)</h1>
+<p>As much as I wish I’d get bonus points from the Canadian government for being able to plot my time in Canada, this is not the case. Practically speaking, then, plotting my maps is just a little additional dopamine rush for me. I <em>did</em> want to be able to visually confirm that my coordinates made sense while getting this set up, though, so I’ve included some basic code for how to do that here. Be it known that there are many other blogs that have much more interesting dataviz tutorials that harness <code>ggmap</code> and Google Map timelines, however.</p>
+<p>Since I was mostly interested in my presence in Canada in the last five years, during which time I’ve mostly been in Ontario, we’ll plot just that region for now. The <code>get_map()</code> function in <code>ggmap</code> allows you to download maps of various locations. Deciding the appropriate “zoom” level takes a bit of trial and error and depends on your goals. In this case, 5 works well for seeing the province of Ontario and some surrounding area.</p>
+<p>The following maps clearly show the difference between different degrees of coordinate rounding precision.</p>
+<pre class="r"><code>on &lt;- ggmap::get_map(&quot;Ontario&quot;, zoom=5)
+
+library(ggplot2)
+# Get map for southwestern Ontario
+swon &lt;- get_map(&quot;Toronto&quot;, zoom=5)
+
+ggmap(swon) + 
+  geom_point(data = loc, 
+             aes(x = lon, y = lat), 
+             alpha = 0.5, color = &quot;red&quot;)</code></pre>
+<pre><code>## Warning: Removed 310 rows containing missing values (geom_point).</code></pre>
+<p><img src="/post/2020-01-02-canada-days-counter_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Here’s the same map but with coordinates rounded to 2 decimal places instead. Big difference!</p>
+<pre><code>## Warning: Removed 4111 rows containing missing values (geom_point).</code></pre>
+<p><img src="/post/2020-01-02-canada-days-counter_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
 <div id="todo" class="section level1">
 <h1>TODO</h1>
 <ul>
 <li>list of locations</li>
 <li>how many days in canada?</li>
+<li>mention rebecca</li>
 </ul>
-<div id="optional-viewing-your-location-data" class="section level2">
-<h2>Optional: Viewing your location data</h2>
-<ul>
-<li>Need to register for a temporary Google API key</li>
-</ul>
-<pre class="r"><code>register_google(&quot;your-secret-api-key&quot;)
-
-on &lt;- get_map(&quot;Ontario&quot;, zoom=5)
-ggmap(world) + geom_point(data = tmp2, aes(x = lon, y = lat), alpha = 0.5, color = &quot;red&quot;)</code></pre>
-</div>
 </div>
 <div class="footnotes">
 <hr />

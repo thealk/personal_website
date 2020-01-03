@@ -22,6 +22,7 @@ draft: TRUE
 ```{r, echo = FALSE}
 library(emo)
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE, fig.align="center")
+load('/Users/theaknowles/Documents/GitHub/personal_website/static/project/canada_days_counter.RData')
 ```
 
 # TL;DR
@@ -62,7 +63,7 @@ Google maps allows you to download your own timeline data in the form of a json 
 
 ## Load libraries
 
-```{r eval = FALSE}
+```{r eval = TRUE}
 library(jsonlite)
 library(ggmap)
 library(dplyr)
@@ -70,16 +71,24 @@ library(stringr)
 library(tidyr)
 ```
 
+## 0. Get Google API
+You need this to be able to use the geocoding functions in ggmap, as well as to be able to plot.
+
+- Need to register for a temporary Google API key
+```{r eval = FALSE}
+register_google("your-secret-api-key")
+```
+
 ## 1. Download your location history from your Google Account
 
 - Download your data from [Google takeout](https://takeout.google.com/settings/takeout).
 - Be sure to only select "Location History." 
-- This can take a little while (it took about 20 minutes for me to download the last 4 years, which is my entire Maps timeline). The final output is a json file called `Location History.json`.
+- This can take a little while (it took about 30 minutes for me to download the last 4 years, which is my entire Maps timeline). The final output is a json file called `Location History.json`.
 - You can also do this from within [Google Maps](https://www.google.com/maps) by going to "Your Data in Maps" >> "Download your Maps Data"
 
 ## 2. Parse the location history file
 
-- This is done using the R package [`jsonlite`](https://cran.r-project.org/web/packages/jsonlite/index.html). I moved my .json output file to my R project folder and ran the following. This may take a few minutes.
+- This is done using the R package [`jsonlite`](https://cran.r-project.org/web/packages/jsonlite/index.html). I moved my .json output file to my R project folder and ran the following. This also took a couple minutes.
 
 ```{r eval=FALSE}
 lh <- "Location History.json"
@@ -98,9 +107,13 @@ min(loc$time)
 max(loc$time)
 ```
 
+
+## 3. Tidy the location history
 Latitude and longitude are recorded in Google in E7 format. You need to divide the original longitude/latitude values by 10^7 to get standard coordinate formatting.
 
-I also found it helpful to round my final coordinates. The more decimal places you include, the more precise your location identification will be. In my case, all I really cared about was whether I could reliably capture border crossings. Some light googling informed me that rounding coordinates to the tens gives you a resolution of 11.1 km, roughly allowing you to ["distinguish the position of one large city from a neighboring city"](https://gis.stackexchange.com/questions/8650/measuring-accuracy-of-latitude-and-longitude). This *greatly* reduces the amount of data you have to work with, which speeds things up tremendously. To test whether this was sufficient, I made a temp file of 1 days worth of location history on a date that I know I crossed from Ontario to New York. I decided that rounding to 0 decimal places was actually sufficient to capture what I wanted, knowing that this may mean I don't capture every single day with 100% accuracy (for example, this runs the risk of days that I spent *near* a border being counted as *crossing* a border - a risk I felt was worth the time saved by the data reduction). To prepare for further reduction, I also added a coordinates column (`coord`).
+I also found it helpful to round my final coordinates. The more decimal places you include, the more precise your location identification will be. In my case, all I really cared about was whether I could reliably capture border crossings. Some [light Wikipediaing](https://en.wikipedia.org/wiki/Decimal_degrees) informed me that rounding coordinates to the tens gives you a resolution of 11.1 km, roughly allowing you to distinguish major cities. Zero decimal places, i.e., rounding to the nearest integer, allows for 111.1 km precision, which can unambiguously capture large regions and countries (see also [here](https://gis.stackexchange.com/questions/8650/measuring-accuracy-of-latitude-and-longitude)). Rounding *greatly* reduces the amount of data you have to work with, which speeds things up tremendously. It's also simply not *necessary*, IMHO, at least for this project, to know your location down to 1.11 meters or less. 
+
+To test whether rounding to the nearest integer was sufficient, I made a temp file of 1 days worth of location history on a date that I know I crossed from Ontario to New York. This allowed me to confirm that rounding to 0 decimal places was more or less enough to capture what I wanted, knowing that this may mean I don't capture every single day with 100% accuracy (for example, this runs the risk of days that I spent *near* a border being counted as *crossing* a border - a risk I felt was worth the time saved by the data reduction). To prepare for further reduction, I also added a coordinates column (`coord`).
 
 ```{r eval = FALSE}
 loc <- loc %>% mutate(
@@ -115,7 +128,7 @@ loc <- loc %>% mutate(
 I grouped the location data by date and coordinates - that is, one row for each unique date-coordinate combination. Since I had rounded my coordinates to 0 decimals earlier, this meant that I got one row for approximately every 111 km. Importantly, I was able to collapse over days that I drove around a single city or over shorter distances. This allowed me to speed up further parsing below.
 
 ```{r eval = FALSE}
-loc_reduced <- loc %>% 
+loc <- loc %>% 
   group_by(date,coord) %>% 
   summarize(n=n()) %>% 
   separate(lonlat, c("lon","lat"), sep="_", remove=FALSE) %>%
@@ -128,34 +141,39 @@ loc_reduced <- loc %>%
 At this point, I created a temp file to test one day of travels. You could just as easily a month or specified time span.
 
 ```{r eval = FALSE}
-tmp_day <- loc_reduced %>% 
+tmp_day <- loc %>% 
   filter(date == "2019-10-20") # Look just at Oct 20 2019
-tmp_month <- loc_reduced %>%
+tmp_month <- loc %>%
   filter(str_sub(date,1,6)=="2019-10") # Look just at Oct 2019
 ```
 
-## Coordinates `r emo::ji("point_right")` Country: Reverse geocoding
+## 4. Coordinates `r emo::ji("point_right")` Country: Reverse geocoding
 
 *Geocoding* allows you to convert addresses into geographic coordiantes.
 *Reverse geocoding* allows you to do the opposite: convert coordinates to addresses. 
-The `ggmap` package provides a function `revgeocode()` to do just this. Next I created a small function to use `revgeocode()` to get the address from my location data. I then used the `stringr` package to extract the country, which is always the last element of the list produced by `revgeocode()`.
+The `ggmap` package provides a function `revgeocode()` to do just this. Next I created a small function to use `revgeocode()` to get the address from my location data. I then used the `stringr` package to extract the country, which is always the last element of the list produced by `revgeocode()`. This function returns either just the country, or the full address retrieved from Google.
 
 ```{r echo=TRUE}
-get_country <- function(lon,lat){
+get_country <- function(lon,lat, out=c("country","address")){
   address <- suppressMessages(
     revgeocode(
       as.vector(
         c(as.numeric(lon),
-          as.numeric(lat))))) %>% 
-    str_split(., pattern = ", ")
+          as.numeric(lat)))))
+  # Split address by commas
+  address_split <- str_split(address, pattern = ", ")
+  # Country is always the last element
+  l <- length(address_split[[1]]) 
+  country <- address_split[[1]][l]
   
-  # Get n of items in address
-  l <- length(address[[1]]) 
-  
-  # Country is always last element
-  country <- address[[1]][l]
+  if(is.na(country)){country <- "NA"}
+  if(is.na(address)){address <- "NA"}
     
-  return(country)
+  if(out=="country"){
+    return(country)
+  }else if(out=="address"){
+    return(address)
+  }
 }
 ```
 
@@ -172,14 +190,24 @@ visited_country <- function(x, country = "Canada"){
 Next I used `mapply()` to iterate over each observation in my location history data, applying my `get_country()` and `visited_country()` functions to each row.
 
 ```{r}
-loc_reduced$country <- mapply(get_country, as.numeric(loc_reduced$lon),as.numeric(loc_reduced$lat))
+# Get country
+loc$country <- mapply(get_country, 
+                      loc$lon,loc$lat, 
+                      out = "country")
+# Get address
+loc$address <- mapply(get_country,
+                      loc$lon,loc$lat,
+                      out = "address")
 
-loc_reduced$visited <- mapply(visited_country2, loc_reduced$countries, "Canada")
+# Log whether I visited Canada
+loc$visited <- mapply(visited_country, 
+                      loc$countries, 
+                      "Canada")
 ```
 
 Finally, I computed how many days I was in Canada by grouping my data by date and summing my visits.
 ```{r}
-days_in_canada <- loc_reduced %>%
+days_in_canada <- loc %>%
   group_by(date) %>%
   summarize(n_in_canada = sum(visited)) %>%
   ungroup() %>%
@@ -188,17 +216,66 @@ days_in_canada <- loc_reduced %>%
 sum(days_in_canada$in_canada)
 ```
 
+# Some odd findings
+While for the most part, these points appear to be confirmed by memory and calendar notes, a few oddities arose. According to my maps data, I visited the following countries:
+
+```{r}
+unique(loc$countries)
+```
+
+
+One easy-to-fix issue is that, for whatever reason, the US is coded most of the time as "USA" and once as "United States". For my purposes, this doesn't matter, but it probably makes sense to collapse these two:
+
+```{r}
+loc <- loc %>%
+  mutate(country = ifelse(country=="United States","USA",country))
+```
+
+
+Regarding the other countries I've purportedly "visited", this breakdown isn't 100% accurate. I have never actually visited Thailand or Indonesia. he high number of NAs are a bit worrisome too. 
+
+Closer inspection reveals that most, but not all, of these blips occured on days I was travelling to or around Israel (where my partner was a post-doc for 2 years). I recall Maps having a hard time localizing us sometimes, so perhaps there is something to do with Google's satellite signal or access in this region. To be fair, the Google Maps timeline interface doesn't show these blips, so whatever's happening is getting parsed out by Google Map's final algorithms.
+
+At the end of the day, all I care about is whether it accurately logs whether I was in Canada (even for just a single time point) on a given day. This does seem to be accurate. Even if misses a few days, that's still accurate enough for me at this stage.
+
+# Plotting (optional)
+As much as I wish I'd get bonus points from the Canadian government for being able to plot my time in Canada, this is not the case. Practically speaking, then, plotting my maps is just a little additional dopamine rush for me. I *did* want to be able to visually confirm that my coordinates made sense while getting this set up, though, so I've included some basic code for how to do that here. Be it known that there are many other blogs that have much more interesting dataviz tutorials that harness `ggmap` and Google Map timelines, however.
+
+Since I was mostly interested in my presence in Canada in the last five years, during which time I've mostly been in Ontario, we'll plot just that region for now. The `get_map()` function in `ggmap` allows you to download maps of various locations. Deciding the appropriate "zoom" level takes a bit of trial and error and depends on your goals. In this case, 5 works well for seeing the province of Ontario and some surrounding area.
+
+The following maps clearly show the difference between different degrees of coordinate rounding precision.
+
+```{r eval=FALSE}
+on <- ggmap::get_map("Ontario", zoom=5)
+
+library(ggplot2)
+# Get map for southwestern Ontario
+swon <- get_map("Toronto", zoom=5)
+
+ggmap(swon) + 
+  geom_point(data = loc, 
+             aes(x = lon, y = lat), 
+             alpha = 0.5, color = "red")
+```
+
+```{r eval=TRUE, echo=FALSE}
+map_0_decimals
+```
+
+
+
+Here's the same map but with coordinates rounded to 2 decimal places instead. Big difference!
+
+```{r echo = FALSE, eval=TRUE}
+map_2_decimals
+```
+
+
 # TODO
 - list of locations
 - how many days in canada?
+- mention rebecca
 
-## Optional: Viewing your location data
-- Need to register for a temporary Google API key
-```{r eval = FALSE}
-register_google("your-secret-api-key")
 
-on <- get_map("Ontario", zoom=5)
-ggmap(world) + geom_point(data = tmp2, aes(x = lon, y = lat), alpha = 0.5, color = "red")
-```
 
 
