@@ -1,0 +1,204 @@
+---
+title: "Counting Days in Canada: Using ggmap to track time spent in Canada"
+author: Thea
+date: '2020-01-02'
+slug: canada-days-counter
+categories:
+  - ggplot
+  - R
+  - personal
+tags:
+  - ggmap
+  - R
+  - rstats
+  - google maps
+header:
+  caption: ''
+  image: ''
+  preview: yes
+draft: TRUE
+---
+
+```{r, echo = FALSE}
+library(emo)
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE, fig.align="center")
+```
+
+# TL;DR
+I used my timeline from Google Maps and the `ggmap` package to count the number of days I have spent in Canada in order to facilitate my Canadian citizenship application.
+
+Disclaimer: Not a geocoder. In fact, ironically, anyone who has spent time with me travelling between any two points can probably attest to the fact that I have absolutely zero geospatial intuition whatsoever. Luckily, that doesn't matter here. What matters more is that there is a whole industry that works with "geographic information systems", and I am not one of those people. Therefore, this information, while functional for this task, is really devoid of any deep knowledge of GIS and the field at large. This is not meant to provide a forray into that arena, merely to demonstrate how I wrangled my own location data to achieve a small goal.
+
+- CODE
+
+# The problem
+I am a US citizen, but I have been living in Canada since August 2008. I became a permanent resident of Canada in November 2015. I moved back to the US in August 2019. One of the eligibility requirements for applying for Canadian citizenship is, in addition to being a permanent resident, that you "must have been physically present in Canada for at least 1095 days during the five years before you apply" ([Canada.ca](https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html#time)). You are required to list all the trips you took that brought you out of the country.
+The Canadian government immigration website suggests you use a "travel journal" to document your trips out of Canada. 
+
+I travelled back and forth to the US *all the time*. I am the only member of my family in Canada. When I lived in Montreal, I visited my parents and friends in MA regularly. We took frequent trips to Vermont (mainly to score [Heady Topper](https://alchemistbeer.com/)). When I moved to London, I travelled even more, sometimes heading down to Detroit for just a day or two. My partner moved overseas in 2016, prompting several international trips during my PhD, not to mention conferences, family meet ups, and vacations.
+
+Did I keep a travel journal in careful preparation of my eventual Canadian citizenship application? No, no I did not.
+
+Having been a PR for just over 4 years, and now having no immediate plans to return to Canada, my window of eligibility for citizenship is closing. I need to determine 1) how many days I have spent in Canada so far to ensure I know when my eligibility will likely expire and 2) document my trips.
+
+My cries for help on social media were met with dire responses - there is no easy way around this step. Friends described culling over old emails, Google calendars, passport pages to dtermine exactly when they were in and out of Canada. This sounded miserable and very likely impossible for me, given my frequent back and forths. I needed to figure out a better, faster, more reliable way to document my travels.
+
+# The solution: Location tracking
+Every year, Google Maps sends me a cute and slightly creepy summary of all the places I've been - a haunting reminder that, since I never turn my location services off on my phone, which is always with me, Google knows exactly where I am at all times, how long I stay there, and how I travel there (estimated based on speed of transport between locations).
+
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1081209086014820352')
+```
+
+While that is a bit jarring and worthy of its own ethical debate, in my case for the above problem, it turned out to be EXTREMELY handy. 
+
+Google maps allows you to download your own timeline data in the form of a json file. The [`ggmap`](https://github.com/dkahle/ggmap) package allows you to parse and plot location data. In the end, I was able to parse all of my timeline data since I became a permanent resident[^552], and use it to 1) figure out which days I was in Canada, which would count towards my eligibility requirements, and 2) have a fairly accurate record of the trips I took outside of Canada without having to rely on other sketchy, unreliable forms of documentation (or, god forbid, my MEMORY).
+
+[^552]: Technically if you have been a Canadian PR for less than five years but were living in Canada, you are also allowed to count those days as well. Days spent in Canada before you became a PR within the 5 year time frame count as 0.5 days a piece. In my case, I'm not worrying too much about these days at this point since I have enough days since becoming a PR.
+
+# Steps
+
+[This blog post](https://shiring.github.io/maps/2016/12/30/Standortverlauf_post) gives a nice step-by-step of how to do this. Essentially, the steps are:
+
+## Load libraries
+
+```{r eval = FALSE}
+library(jsonlite)
+library(ggmap)
+library(dplyr)
+library(stringr)
+library(tidyr)
+```
+
+## 1. Download your location history from your Google Account
+
+- Download your data from [Google takeout](https://takeout.google.com/settings/takeout).
+- Be sure to only select "Location History." 
+- This can take a little while (it took about 20 minutes for me to download the last 4 years, which is my entire Maps timeline). The final output is a json file called `Location History.json`.
+- You can also do this from within [Google Maps](https://www.google.com/maps) by going to "Your Data in Maps" >> "Download your Maps Data"
+
+## 2. Parse the location history file
+
+- This is done using the R package [`jsonlite`](https://cran.r-project.org/web/packages/jsonlite/index.html). I moved my .json output file to my R project folder and ran the following. This may take a few minutes.
+
+```{r eval=FALSE}
+lh <- "Location History.json"
+maps_data <- read_json(lh, simplifyVector = TRUE)
+```
+
+Extract the location data and convert the time and date into a human-readable format. 
+```{r eval=FALSE}
+loc <- maps_data$locations
+loc$time = as.POSIXct(as.numeric(loc$timestampMs)/1000, origin = "1970-01-01")
+```
+
+You can check your earliest and most recent maps data time stamps using `min()` and `max()` functions.
+```{r eval = FALSE}
+min(loc$time)
+max(loc$time)
+```
+
+Latitude and longitude are recorded in Google in E7 format. You need to divide the original longitude/latitude values by 10^7 to get standard coordinate formatting.
+
+I also found it helpful to round my final coordinates. The more decimal places you include, the more precise your location identification will be. In my case, all I really cared about was whether I could reliably capture border crossings. Some light googling informed me that rounding coordinates to the tens gives you a resolution of 11.1 km, roughly allowing you to ["distinguish the position of one large city from a neighboring city"](https://gis.stackexchange.com/questions/8650/measuring-accuracy-of-latitude-and-longitude). This *greatly* reduces the amount of data you have to work with, which speeds things up tremendously. To test whether this was sufficient, I made a temp file of 1 days worth of location history on a date that I know I crossed from Ontario to New York. I decided that rounding to 0 decimal places was actually sufficient to capture what I wanted, knowing that this may mean I don't capture every single day with 100% accuracy (for example, this runs the risk of days that I spent *near* a border being counted as *crossing* a border - a risk I felt was worth the time saved by the data reduction). To prepare for further reduction, I also added a coordinates column (`coord`).
+
+```{r eval = FALSE}
+loc <- loc %>% mutate(
+     date = str_sub(time,1,10),
+     time = str_sub(time,12,19),
+     lon = round((loc$longitudeE7 / 1e7), 0),
+     lat = round((loc$latitudeE7 / 1e7), 0),
+     coord = paste(lon,lat,sep="_")
+) 
+```
+
+I grouped the location data by date and coordinates - that is, one row for each unique date-coordinate combination. Since I had rounded my coordinates to 0 decimals earlier, this meant that I got one row for approximately every 111 km. Importantly, I was able to collapse over days that I drove around a single city or over shorter distances. This allowed me to speed up further parsing below.
+
+```{r eval = FALSE}
+loc_reduced <- loc %>% 
+  group_by(date,coord) %>% 
+  summarize(n=n()) %>% 
+  separate(lonlat, c("lon","lat"), sep="_", remove=FALSE) %>%
+  mutate(lon = as.numeric(lon),
+         lat = as.numeric(lat)) %>%
+  ungroup()
+```
+
+
+At this point, I created a temp file to test one day of travels. You could just as easily a month or specified time span.
+
+```{r eval = FALSE}
+tmp_day <- loc_reduced %>% 
+  filter(date == "2019-10-20") # Look just at Oct 20 2019
+tmp_month <- loc_reduced %>%
+  filter(str_sub(date,1,6)=="2019-10") # Look just at Oct 2019
+```
+
+## Coordinates `r emo::ji("point_right")` Country: Reverse geocoding
+
+*Geocoding* allows you to convert addresses into geographic coordiantes.
+*Reverse geocoding* allows you to do the opposite: convert coordinates to addresses. 
+The `ggmap` package provides a function `revgeocode()` to do just this. Next I created a small function to use `revgeocode()` to get the address from my location data. I then used the `stringr` package to extract the country, which is always the last element of the list produced by `revgeocode()`.
+
+```{r echo=TRUE}
+get_country <- function(lon,lat){
+  address <- suppressMessages(
+    revgeocode(
+      as.vector(
+        c(as.numeric(lon),
+          as.numeric(lat))))) %>% 
+    str_split(., pattern = ", ")
+  
+  # Get n of items in address
+  l <- length(address[[1]]) 
+  
+  # Country is always last element
+  country <- address[[1]][l]
+    
+  return(country)
+}
+```
+
+I then created another function to determine, for a given data point, whether I was or was not in a given country (e.g., Canada). This function returns 1 if "country" equals "Canada", and 0 if not. This allows me to sum the days spent in Canada.
+
+```{r}
+visited_country <- function(x, country = "Canada"){
+  if(x==country){
+    visit <- 1
+  }else{visit <- 0}
+}
+```
+
+Next I used `mapply()` to iterate over each observation in my location history data, applying my `get_country()` and `visited_country()` functions to each row.
+
+```{r}
+loc_reduced$country <- mapply(get_country, as.numeric(loc_reduced$lon),as.numeric(loc_reduced$lat))
+
+loc_reduced$visited <- mapply(visited_country2, loc_reduced$countries, "Canada")
+```
+
+Finally, I computed how many days I was in Canada by grouping my data by date and summing my visits.
+```{r}
+days_in_canada <- loc_reduced %>%
+  group_by(date) %>%
+  summarize(n_in_canada = sum(visited)) %>%
+  ungroup() %>%
+  mutate(in_canada = ifelse(n_in_canada > 0,1,0))
+
+sum(days_in_canada$in_canada)
+```
+
+# TODO
+- list of locations
+- how many days in canada?
+
+## Optional: Viewing your location data
+- Need to register for a temporary Google API key
+```{r eval = FALSE}
+register_google("your-secret-api-key")
+
+on <- get_map("Ontario", zoom=5)
+ggmap(world) + geom_point(data = tmp2, aes(x = lon, y = lat), alpha = 0.5, color = "red")
+```
+
+
