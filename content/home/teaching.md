@@ -17,11 +17,13 @@ weight = 3
 
 
 ## As course instructor
-### University at Buffalo
+**University at Buffalo**
+
 - CDS 288: Anatomy and Physiology of the Speech Mechanism (Fall 2019)
 
 ## As teaching assistant
-### Western University
+**Western University**
+
 - COMMSCI 9615: Speech Science (Fall 2016, 2017)
 - COMMSCI 9631: Voice Disorders (Spring 2017)
 
