@@ -27,10 +27,6 @@ weight = 3
 - COMMSCI 9615: Speech Science (Fall 2016, 2017)
 - COMMSCI 9631: Voice Disorders (Spring 2017)
 
-## As guest lecturer
-- "Introduction to Phonetics" (COMMSCI 9615, Speech Science, Western University Sept 2016, 2017)
-- "Treatment trends in hypokinetic dysarthria" (SLP 714, Motor Speech Disorders, Central Michigan University, March 2017)
-- "Pursuing a PhD in Communication Sciences and Disorders" (COMMSCI 9636, Professional Practice, Western University, Nov 2017)
 
 ## Tutorials
 | Presentation     | Date         |  Group         | Additional Materials |
