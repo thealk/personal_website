@@ -41,7 +41,7 @@ While much of my research has focused on hypokinetic dysarthria, a motor speech 
 
 As a means to constantly striving to improve myself as a researcher, I also have a strong interest in tools for data analysis. Much of what I post here includes my musings on these tools (oftentimes this is the R programming language and environment) and tips or tricks I've tried to work through. See my posts and projects for more information.
 
-*This website was built with [blogdown](https://bookdown.org/yihui/blogdown/) using the [Hugo Academic theme](https://themes.gohugo.io/academic/) and the 1950s default color scheme.*
+*This website was built with [blogdown](https://bookdown.org/yihui/blogdown/) using the [Hugo Academic theme](https://themes.gohugo.io/academic/).*
 
 Also feel free to ask me about:
 
