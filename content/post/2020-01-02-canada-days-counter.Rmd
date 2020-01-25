@@ -247,7 +247,7 @@ loc$address <- str_replace_all(loc$address, (c("Hunt" = "Swan", "Myrtle" = "Mart
 subset(loc, date > "2015-11-30") %>% head()
 ```
 
-Note that I modfied the street names so as not to show actual addresses in this post. Because of the coordinate rounding, the addresses are also likely do not reflect my exact location (just a location within 111km).
+Note that I modfied the street names so as not to show actual addresses in this post. Because of the coordinate rounding, the addresses also likely do not reflect my exact location (just a location within 111km).
 
 
 Finally, I computed how many days I was in Canada by grouping my data by date and summing my visits.
@@ -270,7 +270,7 @@ days_in_country <- days_in_canada
 sum(days_in_country$in_canada)
 ```
 
-Looks like, since November 22, 2015, I've spent 1102 days in Canada, *just* over the required 1095! Since my pre-PR days count for some to use as padding (and since I do still go back and forth to Canada periodically), this is good news. I'll be eligible to apply for another year. 
+Looks like, since November 22, 2015, I've spent 1101 days in Canada, *just* over the required 1095! Since my pre-PR days count for some to use as padding (and since I do still go back and forth to Canada periodically), this is good news. I'll be eligible to apply for another year. 
 
 
 ## 6. Logging Trips

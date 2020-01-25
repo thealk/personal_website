@@ -4,11 +4,11 @@ widget = "projects"
 active = true
 date = "2018-02-09T00:00:00"
 
-title = "Projects"
-subtitle = "Serious and not-so-serious"
+title = "Showcase"
+subtitle = "Code, projects, and media"
 
 # Order that this section will appear in.
-weight = 40
+weight = 4
 
 # Content.
 # Display content from the following folder.

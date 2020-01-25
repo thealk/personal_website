@@ -288,7 +288,12 @@ defaultContentLanguageInSubdir = false
 #  weight = 4
 
 [[menu.main]]
-  name = "Projects"
+  name = "Teaching"
+  url = "#teaching"
+  weight = 4
+
+[[menu.main]]
+  name = "Showcase"
   url = "#projects"
   weight = 5
 
@@ -297,10 +302,6 @@ defaultContentLanguageInSubdir = false
   url = "#posts"
   weight = 6
 
-#[[menu.main]]
-#  name = "Teaching"
-#  url = "#teaching"
-#  weight = 5
 
 #[[menu.main]]
 #  name = "Contact"

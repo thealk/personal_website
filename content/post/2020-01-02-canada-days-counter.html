@@ -94,17 +94,17 @@ locations$time = as.POSIXct(as.numeric(locations$timestampMs)/1000,
 
 locations %&gt;% select(1:3,time) %&gt;% head()</code></pre>
 <pre><code>##     timestampMs latitudeE7 longitudeE7                time
-## 1 1437674692250  455027169  -735712951 2015-07-23 13:04:52
-## 2 1437674752999  455028758  -735716985 2015-07-23 13:05:52
-## 3 1437674813904  455028758  -735716985 2015-07-23 13:06:53
-## 4 1437675197645  455026308  -735713548 2015-07-23 13:13:17
-## 5 1437675258697  455026081  -735713646 2015-07-23 13:14:18
-## 6 1437675326946  455026395  -735714586 2015-07-23 13:15:26</code></pre>
+## 1 1437674692250  455027169  -735712951 2015-07-23 14:04:52
+## 2 1437674752999  455028758  -735716985 2015-07-23 14:05:52
+## 3 1437674813904  455028758  -735716985 2015-07-23 14:06:53
+## 4 1437675197645  455026308  -735713548 2015-07-23 14:13:17
+## 5 1437675258697  455026081  -735713646 2015-07-23 14:14:18
+## 6 1437675326946  455026395  -735714586 2015-07-23 14:15:26</code></pre>
 <p>You can check your earliest and most recent maps data time stamps using <code>min()</code> and <code>max()</code> functions.</p>
 <pre class="r"><code>min(locations$time)</code></pre>
-<pre><code>## [1] &quot;2015-07-23 13:04:52 CDT&quot;</code></pre>
+<pre><code>## [1] &quot;2015-07-23 14:04:52 EDT&quot;</code></pre>
 <pre class="r"><code>max(locations$time)</code></pre>
-<pre><code>## [1] &quot;2020-01-02 09:32:05 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-01-02 10:32:05 EST&quot;</code></pre>
 <p>My location tracking has been on since July 2015. The most recent point reflects the last time I downloaded my Maps data.</p>
 </div>
 <div id="tidy-the-location-history" class="section level2">
@@ -204,7 +204,7 @@ head(loc) # roads were renamed for privacy</code></pre>
 ## 4 2015-12-04 -79_44   -79    44     2 Canada  815 Martin Rd W, Whi…       1
 ## 5 2015-12-04 -81_43   -81    43   330 Canada  2111 Swan Rd, Dorche…       1
 ## 6 2015-12-04 -83_42   -83    42    35 Canada  717 McCormick Rd, Ha…       1</code></pre>
-<p>Note that I modfied the street names so as not to show actual addresses in this post. Because of the coordinate rounding, the addresses are also likely do not reflect my exact location (just a location within 111km).</p>
+<p>Note that I modfied the street names so as not to show actual addresses in this post. Because of the coordinate rounding, the addresses also likely do not reflect my exact location (just a location within 111km).</p>
 <p>Finally, I computed how many days I was in Canada by grouping my data by date and summing my visits.</p>
 <pre class="r"><code>days_in_country &lt;- loc %&gt;%
   group_by(date) %&gt;%
@@ -214,7 +214,7 @@ head(loc) # roads were renamed for privacy</code></pre>
   mutate(in_canada = ifelse(n_in_canada &gt; 0,1,0))</code></pre>
 <pre class="r"><code>sum(days_in_country$in_canada)</code></pre>
 <pre><code>## [1] 1101</code></pre>
-<p>Looks like, since November 22, 2015, I’ve spent 1102 days in Canada, <em>just</em> over the required 1095! Since my pre-PR days count for some to use as padding (and since I do still go back and forth to Canada periodically), this is good news. I’ll be eligible to apply for another year.</p>
+<p>Looks like, since November 22, 2015, I’ve spent 1101 days in Canada, <em>just</em> over the required 1095! Since my pre-PR days count for some to use as padding (and since I do still go back and forth to Canada periodically), this is good news. I’ll be eligible to apply for another year.</p>
 </div>
 <div id="logging-trips" class="section level2">
 <h2>6. Logging Trips</h2>
