@@ -29,9 +29,13 @@ math = false
 +++
 A subset of recent research presentations I've given at conferences. For more, see my [CV](https://theaknowles.com/files/cv/KnowlesCV_academic_2020.pdf) and [Research Gate](https://www.researchgate.net/profile/Thea_Knowles2?ev=hdr_xprf&_sg=Rp3okEuUOsbaoZ43sU2gcvtW2e8wlRd-34D_qqYSSEHjSid62o4dx6ap2E2_dZpsldcr58t-5cbWliTtqTxdIE1-).
 
+**Speech rate modification in Parkinson's**
+
+- [Motor Speech Conference 2020](/img/posters/radi_motorSpeech_2020.pdf)
+
 **Speech amplification**
 
-- [ASHA 2018](../../static/img/posters/ASHA_Knowles_FMAmp.pdf)
+- [ASHA 2018](/img/posters/ASHA_Knowles_FMAmp.pdf)
 - SAC Connect 2018
 - [SAC 2018](https://www.researchgate.net/publication/327546164_Comparison_of_speech_amplification_devices_in_individuals_with_Parkinson's_disease)
 
