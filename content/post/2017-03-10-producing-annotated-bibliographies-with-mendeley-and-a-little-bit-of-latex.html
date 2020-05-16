@@ -1,0 +1,95 @@
+---
+title: Producing annotated bibliographies with Mendeley (and a little bit of LaTeX)
+author: ''
+date: '2017-03-10'
+slug: producing-annotated-bibliographies-with-mendeley-and-a-little-bit-of-latex
+categories:
+  - research
+tags:
+  - reference management
+  - writing
+  - dissertation
+header:
+  caption: ''
+  image: ''
+  preview: yes
+---
+
+
+
+<p>I’ve whittled away quite a bit of time trying to optimize my workflow for getting started on new research projects. Finding a good reference manager is a big, big part of that optimization. Many, many of my colleagues use Mendeley, which allows you to organize your articles into project subfolders, provide links to the PDFs, cite the papers as you write in Word and Google Docs, and add annotations. After a recent departmental workshop on using Mendeley, a pal and I were discussing that one of the main limitations to any reference manager is generating a project-specific annotated bibliography. This post is the outcome to some troubleshooting resulting from that conversation.</p>
+<p>For projects past, I’ve tended to just make a new text document for each project in which I take brief summarizing notes on relevant papers. However, given that many of the papers I read are relevant to multiple projects, this quickly got to be redundant. Most reference managers allow you to take notes within the entry for a given source, but there needs to be an additional step in order to aggregate these notes to a common reference document for a given project.</p>
+<p>Bring in <a href="https://www.latex-project.org/"><strong>LaTeX</strong></a>, an extremely powerful system for generating high quality text documents. One of my most cherished features of writing in LaTeX is being able to seamlessly and automatically cite references using the package biblatex. While there is a bit of a learning curve involved and a few (surmountable) barriers to implementing it full time (more on that later), it’s incredibly useful and I’m trying to transition to using it full time for all major writing projects.
+<strong>For the purposes of this post, however, you don’t actually need to know anything about LaTeX to be able to use it to generate an annotated bibliography.</strong></p>
+<p>Biblatex employs various citation styles - APA is the standard style preferred in my field, for example. The one of interest is the “reading” style, which is specifically intended for generating annotated bibliographies in LaTeX. The “reading” style crucially allows the user to print the contents of the field “annotation.”</p>
+<p>Without getting too hot and heavy into less important details, here’s the basic workflow for taking notes in Mendeley, and creating an automated annotated bibliography in LaTeX using the reading style in biblatex:</p>
+<div id="workflow" class="section level1">
+<h1>Workflow</h1>
+<div id="prerequisites" class="section level3">
+<h3>Prerequisites</h3>
+<p>For this, you need the Mendeley desktop app and a LaTeX editor installed (I use <a href="https://www.macupdate.com/app/mac/12104/texshop">TexShop</a> for Mac).</p>
+<ol style="list-style-type: decimal">
+<li>Make a folder in Mendeley for your specific project and add relevant papers.</li>
+<li>Take brief, summarizing notes in the “notes” field for each of the papers</li>
+</ol>
+<p><img src="/img/mendeley/mendeley1.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Once you’re ready to generate an annotated bibliography, select all the papers in the folder and go to File &gt;&gt; Export. Export the selected files as a .bib file and save it somewhere useful (e.g., in a project folder).</li>
+</ol>
+<p><img src="/img/mendeley/mendeley2.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Create a new .tex document in LaTeX, and copy and paste the following code:</li>
+</ol>
+<ul>
+<li><em>Note: the backslash  signifies that you’re about to use a LaTeX specific command (followed by relevant arguments in brackets), and anything preceded by % signifies a comment (i.e., will be ignored by the program). Note also that I do not know how to make LaTeX code appear pretty in an RMarkdown document…</em></li>
+</ul>
+<pre><code>\documentclass[12pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style=reading,abstract=false,file=false,annotation=true]{biblatex}
+
+\addbibresource{/YOUR/PROJECT/PATH/project1.bib}
+
+\title{Project: DBS Patient Controllers}
+\author{Annotated Bibliography} % fill this in if you want to specify your name; you could also include a subtitle if you want
+% \date{} % activate this if you don&#39;t want to include the date
+
+\begin{document}
+\maketitle
+
+\nocite{*} % this means include everything (*) in the .bib file in the final bibliography, but don&#39;t cite it in the text
+
+\printbibliography % this, rather intuitively, prints the bibliography
+\end{document}</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Compile (generate) the document using pdflatexmk (this is important, as biber won’t be called if you compile using just regular LaTeX, and your bibliography won’t be printed without some extra work). You can compile the document by clicking Typeset or typing Command+T on a Mac.</li>
+</ol>
+<p><img src="/img/mendeley/mendeley3.png" /></p>
+<p>The output should include one entry for each paper in your <code>.bib</code> file. Each entry should contain:</p>
+<ul>
+<li>A header that includes the author, title, and key for the paper</li>
+<li>The paper citation</li>
+<li>The annotations</li>
+</ul>
+<p><img src="/img/mendeley/mendeley4.png" /></p>
+</div>
+</div>
+<div id="possible-troubleshooting-and-other-points-of-interest" class="section level1">
+<h1>Possible troubleshooting and other points of interest</h1>
+<ul>
+<li>For some reason unbeknownst to me (possibly dark magic, possibly something related to typsetting commands beyond the depth of my comprehension), the first time I tried to compile this it just printed a blank document with the title and date. If that happens, try compiling it again. If it still just prints a blank document, try deleting all the auxiliary files (basically everything generated by LaTeX except the .tex file) and compiling yet again. It should work.</li>
+<li>While this all works just fine on Mac products, we were running into some difficulty in switching to a PC. Consider yourself warned.</li>
+<li>The reading style also optionally lets you include the file path to the paper and the abstract in the bibliography. If you want these to appear, just set them to true instead of false.</li>
+<li>Currently, I haven’t figured out how to include bullets or line breaks from notes in Mendeley (only single paragraphs).</li>
+<li>However, I also use another reference manager, <a href="https://www.jabref.org/">JabRef</a> (full disclosure: I use JabRef more than I use Mendeley, but Mendeley is well known and used by a lot of folks I work with, so I’ve tried to familiarize myself with it). I have figured out how to include bullets and line breaks using JabRef using LaTeX syntax in the annotations but it’s causing me some current headaches when trying to generate a bibliography in RMarkdown. So perhaps we’ll save that for another day.</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Narrator: She would not save that for another day.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>You can also cite specific papers that are in the bib, rather than everything at once. If you use a master .bib file (rather than smaller, project-specific .bib files), you may find this more useful.The <code>*</code> says “include everything,” however, each biblatex entry includes an entry “key” that was generated by Mendeley. To find the key, open up the <code>.bib</code> file in TexShop (or whatever LaTeX editor you’re using). Each entry starts with <code>@</code>, followed by the type of entry, and then arguments in curly brackets separated by commas. The key will be the first argument. In the following example, the key for the first article is Kaiser2010:</li>
+</ul>
+<p><img src="/img/mendeley/mendeley5.png" /></p>
+</div>
