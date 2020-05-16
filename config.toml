@@ -59,6 +59,7 @@ defaultContentLanguageInSubdir = false
   organizations = [ { name = "University at Buffalo", url = "https://www.buffalo.edu/"}]
   #organizations = [ { name = "Western University", url = "http://www.uwo.ca" } ]
 
+  sharing_image = "icon.png"
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "TheaKnowles.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "theaknow@buffalo.edu"
