@@ -1,7 +1,7 @@
 # Theme metadata
 name = "thea"
 
-sharing_image = "image.png"
+sharing_image = "icon.png"
 # Is theme light or dark?
 light = true
 
