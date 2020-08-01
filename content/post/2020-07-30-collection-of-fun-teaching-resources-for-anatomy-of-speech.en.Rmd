@@ -1,0 +1,207 @@
+---
+title: Collection of fun teaching resources for anatomy and physiology of speech
+author: Thea Knowles
+date: '2020-07-30'
+slug: collection-of-fun-teaching-resources-for-anatomy-of-speech
+categories:
+  - teaching
+  - speech science
+tags:
+  - teaching
+  - anatomy
+  - slpeeps
+  - speech science
+header:
+  caption: ''
+  image: ''
+  preview: yes
+---
+
+Over the last year, I've been slowly amassing links, tweets, ideas, and resources to make teaching Anatomy & Physiology of the Speech Mechanism more fun and interactive for my undergrads. In an attempt to make my now-totally-remote course more interactive, I'm returning to many of these in an effort to catalog what I like about them and think about if and how I'll incorporate each into my materials this fall. This is both meant to be an annotated reminder to myself as well as hopefully a useful list of resources to someone who happens across this post.
+
+Most of these are free or very accessible. A few (AnatomyTV and MergeCube) are more expensive, but I've linked them here because I either use them or think they sound really nifty. Many of the ideas I've curated have come from Twitter[^1]. In these cases, I've linked to the original tweets as well as the resources mentioned. Because I always find it helpful when others post useful resources they've used and/or come across, I'm posting my list in that is the case for someone else who comes across it here.
+
+[^1]: My Twitter feed is a bit of an anomaly, I have learned, as it is mostly a hub of cheerful stats memes, dataviz, and bright corners of academia making fun of itself. There very, very dark corners of Twitter but I've gotta say, I've come across some really wonderful academic inspiration there.
+
+## Traditional teaching materials, with a spin
+
+### [Netter's Aatlas of Anatomy for Speech, Swallowing, and Hearing Companion Online Resources](https://evolve.elsevier.com/cs/product/9780323239844?role=student)
+
+**What I like**
+
+- You don't even need to buy the book to access this! Users can register for the companion for free. The website says "free with textbook" but it's also free without.
+- Loads of review quizzes
+- Lots of labelling with Netter's images!
+
+![](/img/anatomy/netters_companion.png)
+
+### [Anatomy Zone walk-through videos](https://www.youtube.com/watch?v=lqeDLsP1ISE&t=4s)
+
+**What I like**
+
+- There are a million and a half YouTube videos for anatomy demonstrations, but I especially like the Anatomy Zone videos (especially their larynx description series), which walk through a 3D anatomical structure (using [Biodigital](https://www.biodigital.com/)), explaining concepts along the way. 
+- Descriptions are very clear, and it's like having access to the interactive BioDigital program (but you aren't actually the one doing the interacting)
+
+![](/img/anatomy/anatomyzone.gif)
+
+
+## Interactive 2D and 3D models
+
+## Free resources
+
+### [Interactive larynx](https://www1.columbia.edu/sec/itc/hs/medical/anatomy_resources/anatomy/larynx/)
+
+**What I like**
+
+- Mostly static images, but allows you to see various layers/contexts
+- Good for labelling practice
+- Has a stock of short video clips, both animated and scope recordings
+- Free website - no subscription or account necessary
+
+![](/img/anatomy/interactive-larynx-cricothyroid.gif)
+
+### [Seeing Speech](https://www.seeingspeech.ac.uk/ipa-charts/?chart=1&datatype=1&speaker=1)
+**What I like**
+
+- Interactive IPA chart that allows you to view speech production as an animation, MRI, or ultrasound recording (of multiple speakers).
+- More phonetics-centric, but still very helpful
+
+![](/img/anatomy/seeing_speech.gif)
+
+### [BioDigital](https://www.biodigital.com/), Head & Neck view
+**What I like**
+- I'd only actually seen these via the AnatomyZone YouTube videos, assuming that this was an expensive paid program. While there ARE expensive paid options, there's actually a TON you can do with a free account. You can view individual structures or multiple layers, pan and rotate, and use as labelling practice. 
+- NOTE I have not actually played around with this because we have institutional access to AnatomyTV, which I've included below in the "more expensive" resources
+
+![](/img/anatomy/biodigital.gif)
+
+
+
+## More expensive resources
+
+### [AnatomyTV](http://www.anatomy.tv/)
+
+**What I like**
+
+- Has a huge catalog of structures that you can view and rotate. You can toggle the layers, view in more or less context, and read detailed descriptions.
+- In addition to the main featuers, it has quizzes and labelling exercises, image banks of diagrams and illustrations, lots of videos (including muscle action, phonation, and swallowing) and case study descriptions
+- You can also save custom image and text, which is super useful for self-study
+- Add-on options include the option for instructor-created quizzes ("Perceptual and Adaptive Learning Modules")
+
+**Con: Expensive** 
+
+  - This is an expensive subscription, but if your institution has access to it we've found it very useful.
+  - Last year the UB library got a subscription to the Speech-Language Pathology clinical specialty, but there are other specialties/bundles available on a subscription or individual basis. 
+  - There are other similar programs (such as [BioDigital](https://www.biodigital.com/), used in the AnatomyZone videos I talked about above), and most are fairly pricey.
+
+![](/img/anatomy/anatomytv.png)
+
+### [MergeCube](https://mergeedu.com/home) as seen on [Twitter](https://twitter.com/clairemtimmins/status/1067468782229176321)!
+- I haven't personally used this, but it uses a VR cube, headset, and app combo to allow you to see and "hold" 3D renditions of anything you can find a template for.
+
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1067468782229176321')
+```
+</center>
+
+
+
+## Hands on arts-and-crafts
+- Good for promoting more low-key tactile learning
+- I thought offering things like this as extra credit was brilliant:
+
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1287128088174895109')
+```
+</center>
+
+
+
+### Coloring books
+I have not yet found a coloring book specifically for SLPeeps, but I am constantly on the look out. I jokingly said I'd commission one if I could find the right artist, and I actually DID email [this guy](https://jasongilde.info/head-neck/) but never heard back. A student actually made her own and showed it to me and I melted into a puddle on the floor.
+
+#### Neuroantomy
+- [Netter's Neuroanatomy Coloring Book](https://www.amazon.com/Netters-Neuroscience-Coloring-David-Felten/dp/0323509592/ref=sr_1_6?crid=16UIK3HB5GQWV&dchild=1&keywords=netter%27s+anatomy+coloring+book&qid=1596133172&s=books&sprefix=netter%27s+%2Cstripbooks%2C164&sr=1-6)
+
+#### General anatomy
+- [Netter's Anatomy Coloring Book](https://www.amazon.com/Netters-Anatomy-Coloring-Updated-Science/dp/0323545033/ref=sr_1_3?crid=1JOXZX1D5NV9V&dchild=1&keywords=netter%27s+anatomy+coloring+book&qid=1596306251&s=books&sprefix=netter%27s+%2Cstripbooks%2C522&sr=1-3)
+- [The Anatomy Coloring Book](https://www.amazon.com/Anatomy-Coloring-Book-Wynn-Kapit/dp/0321832019/ref=asc_df_0321832019/?tag=hyprod-20&linkCode=df0&hvadid=312168166316&hvpos=&hvnetw=g&hvrand=9032721229648770109&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9005472&hvtargid=pla-462865123644&psc=1)
+  - Good for general reference, but not specific to speech.
+
+
+
+### Build your own...
+#### [Build your own paper larynx](https://vocalprocess.co.uk/build-your-own-tilting-larynx/)
+- See also [Pinterest templates](https://www.pinterest.ca/pin/188377196884914435/?lp=true)
+   Examples in the wild:
+
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1095675225335910400')
+```
+</center>
+
+And with muscles!
+
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1098223202210365440')
+```
+</center>
+
+#### [Build your own vowel resonators](https://www.phon.ucl.ac.uk/home/mark/vowels/)
+- This is more relevant to phonetics than anatomy, but still helpful for discussions of source/filter in terms of physiology of phonation
+[![](/img/anatomy/vowel-resonators.png)](https://www.phon.ucl.ac.uk/home/mark/vowels/)
+
+
+
+## Miscellaneous media and resources
+
+### The [#BlackInNeuro](https://twitter.com/search?q=%23blackinneuro&src=typed_query) hashtag on Twitter
+- Highlights Black scholars in neuro-related fields. Excellent to showcase when discussing future career options for undergrads in our program.
+
+![](/img/anatomy/blackinneuro.gif)
+
+
+### This Twitter thread review of white matter tracts
+
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1272529293248258050')
+```
+</center>
+
+### Ianessa Humbert's whole Twitter feed but especially her schematics
+<center>
+```{r eval = TRUE, echo = FALSE}
+blogdown::shortcode('tweet', '1246118599707811840')
+```
+</center>
+
+### Anatomoji
+[![Anatomoji](/img/anatomy/anatomoji.jpeg)](https://twitter.com/NeuroGUSS_DUK/status/1205482000062275585?s=09)
+
+- Anatomoji is from [Dr. Toni Burke's instagram](https://www.instagram.com/drtoniburke/?hl=en). She's an "aesthetic doctor" but posts fun resources about anatomy of the face. Haven't looked through extensively yet to know how accurate/helpful this is...
+- Sadly not an actual emoji
+
+### Anatomy Art 
+- There are surely many, many more artists out there, but here are some I've come across I've really liked
+  - [Artery Ink](https://www.arteryink.com/collections/prints)
+  - [Jason Gilde](https://jasongilde.info/vagus-nerve/)
+  - [LyonRoadArt](https://www.etsy.com/shop/LyonRoadArt?ref=simple-shop-header-name&listing_id=686884367&section_id=16995157)
+
+
+| | |
+|---|---|
+|[![](/img/anatomy/oral_cavity_art.jpg){width=75%}](https://www.etsy.com/listing/709517314/swallowing-mechanism-art-print-dental?ref=shop_home_active_3&crt=1) | [![](/img/anatomy/cranial_nerves_art.jpg){width=75%}](https://www.etsy.com/listing/672746358/cranial-nerves-watercolor-poster-medical?ref=shop_home_active_11&frs=1) |
+| | |
+| [![](/img/anatomy/rln.jpg){width=300px}](https://jasongilde.info/vagus-nerve/) | [![](/img/anatomy/lungs_art.jpg){width=300px}](https://www.arteryink.com/collections/prints/products/blue-green-lungs-8x10-or-11x14?variant=12427721670742) |
+
+
+
+
+<!-- - [Anatomy arcade](http://www.anatomyarcade.com/index.html) -->
+<!--   - I was initially excited about this because of the "Poke a muscle" game but it's not actually that useful -->
+
