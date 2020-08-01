@@ -173,12 +173,20 @@ blogdown::shortcode('tweet', '1272529293248258050')
 ```
 </center>
 
+### [Voice doctor](https://www.voicedoctor.net/media)
+- Audio and video of healthy and disordered voice production
+
 ### Ianessa Humbert's whole Twitter feed but especially her schematics
 <center>
 ```{r eval = TRUE, echo = FALSE}
 blogdown::shortcode('tweet', '1246118599707811840')
 ```
 </center>
+
+### [Facial muscles make-up tutorials](https://www.youtube.com/watch?v=lP8MMY0iY2E)
+- There are lots of these out there, but here's one:
+
+![](/img/anatomy/facial_muscles_makeup.gif)
 
 ### Anatomoji
 [![Anatomoji](/img/anatomy/anatomoji.jpeg)](https://twitter.com/NeuroGUSS_DUK/status/1205482000062275585?s=09)

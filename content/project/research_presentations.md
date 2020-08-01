@@ -31,6 +31,7 @@ A subset of recent research presentations I've given at conferences. For more, s
 
 **Speech rate modification in Parkinson's**
 
+- [Labphon 2020](https://casa-lab.com/img/research/Knowles_labphon_virtualPoster.pdf)
 - [Motor Speech Conference 2020](/img/posters/radi_motorSpeech_2020.pdf)
 
 **Speech amplification**
