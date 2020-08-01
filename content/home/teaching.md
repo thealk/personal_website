@@ -19,7 +19,8 @@ weight = 3
 ## As course instructor
 **University at Buffalo**
 
-- CDS 288: Anatomy and Physiology of the Speech Mechanism (Fall 2019)
+- CDS 288: Anatomy and Physiology of the Speech Mechanism (Fall 2019, 2020)
+- CDS 640: Motor Speech Disorders (Fall 2020)
 
 ## As teaching assistant
 **Western University**
