@@ -176,12 +176,18 @@ blogdown::shortcode('tweet', '1272529293248258050')
 ### [Voice doctor](https://www.voicedoctor.net/media)
 - Audio and video of healthy and disordered voice production
 
-### Ianessa Humbert's whole Twitter feed but especially her schematics
+### Schematics/illustrations
+
+- Ianessa Humbert's whole Twitter feed but especially her schematics
 <center>
 ```{r eval = TRUE, echo = FALSE}
 blogdown::shortcode('tweet', '1246118599707811840')
 ```
 </center>
+
+- Lots of diagrams from [The Studying SLP](https://www.instagram.com/thestudyingslp/)
+![](/img/anatomy/glottal_cycle.jpg)
+
 
 ### [Facial muscles make-up tutorials](https://www.youtube.com/watch?v=lP8MMY0iY2E)
 - There are lots of these out there, but here's one:
