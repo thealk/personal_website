@@ -36,7 +36,7 @@ selected = false
 #projects = ["tvs"]
 
 # Links (optional).
-url_pdf = "https://asa.scitation.org/doi/10.1121/2.0000125"
+url_pdf = ""
 url_preprint = ""
 url_code = ""
 url_dataset = ""
@@ -45,6 +45,7 @@ url_slides = ""
 url_video = ""
 url_poster = ""
 url_source = ""
+url_custom = [{name = "DOI", url = "https://asa.scitation.org/doi/10.1121/2.0000125"}]
 
 # Does the content use math formatting?
 math = true

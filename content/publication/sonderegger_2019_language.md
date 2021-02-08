@@ -1,8 +1,8 @@
 +++
 title = "Structured heterogeneity in Scottish stops over the twentieth century"
-#date = ""
+date = "2020-01-01"
 # Remove weight when published
-weight = 1
+#weight = 1
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Morgan Sonderegger", "Jane Stuart-Smith", "Rachel Macdonald", "**Thea Knowles**", "Tamara Rathcke"]
@@ -16,11 +16,11 @@ authors = ["Morgan Sonderegger", "Jane Stuart-Smith", "Rachel Macdonald", "**The
 # 4 = Technical report
 # 5 = Book
 # 6 = Book chapter
-publication_types = ["3"]
+publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "Language"
-publication_short = "To appear: Language"
+publication_short = "Language"
 
 # Abstract and optional shortened version.
 abstract = "How and why speakers differ in the phonetic implementation of phonological contrasts, and the relationship of this ‘structured heterogeneity’ to language change, has been a key focus over 50 years of variationist sociolinguistics. In phonetics, interest has recently grown in uncovering ‘structured variability’—how speakers can differ greatly in phonetic realization in non-random ways—as part of the longstanding goal of understanding variability in speech. The English stop voicing contrast, which combines extensive phonetic variability with phonological stability, provides an ideal setting for an approach to understanding structured variation in the sounds of a community’s language which illuminates both synchrony and diachrony. This paper examines the voicing contrast in a vernacular dialect (Glasgow Scots) in spontaneous speech, focusing on individual speaker variability within and across cues, including over time. Speakers differ greatly in the use of each of three phonetic cues to the contrast, while reliably using each one to differentiate voiced and voiceless stops. Interspeaker variability is highly structured: speakers lie along a continuum of use of each cue, as well as correlated use of two cues—VOT and closure voicing—along a single axis. Diachronic change occurs along this axis, towards a more aspiration-based and less voicing-based phonetic realization of the contrast, suggesting an important connection between synchronic and diachronic speaker variation."

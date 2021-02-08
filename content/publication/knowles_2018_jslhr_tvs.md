@@ -36,7 +36,7 @@ selected = true
 #projects = ["dbs"]
 
 # Links (optional).
-url_pdf = "https://jslhr.pubs.asha.org/article.aspx?articleid=2703922"
+url_pdf = ""
 url_preprint = ""
 url_code = ""
 url_dataset = ""
@@ -45,6 +45,7 @@ url_slides = ""
 url_video = ""
 url_poster = ""
 url_source = ""
+url_custom = [{name = "DOI", url = "https://jslhr.pubs.asha.org/article.aspx?articleid=2703922"}]
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.

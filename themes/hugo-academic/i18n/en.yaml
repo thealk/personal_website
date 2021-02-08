@@ -57,6 +57,9 @@
 
 - id: btn_download
   translation: Download
+  
+- id: btn_doi
+  translation: DOI  
 
 # About widget
 

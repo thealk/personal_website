@@ -12,6 +12,9 @@ title = "Thea Knowles"
 # To display a copyright symbol, type `&copy;`.
 copyright = "&copy; 2018"
 
+# NOTE: this website runs when hugo v 0.30 is installed (very old!)
+# If running into issues downloading hugo, this is what fixed it: 
+# https://github.com/rstudio/blogdown/issues/324
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -198,8 +201,8 @@ defaultContentLanguageInSubdir = false
     #   1 = Detailed
     #   2 = APA
     #   3 = MLA
-    publication_format = 3
-    
+    publication_format = 2
+
   # Configuration of project pages.
   [params.presentations]
     # List publications and talks related to the project?
@@ -234,7 +237,6 @@ defaultContentLanguageInSubdir = false
     icon = "envelope"
     icon_pack = "fa"
     link = "mailto:theaknow@buffalo.edu"
-    
   [[params.social]]
     icon = "researchgate"
     icon_pack = "ai"
@@ -254,7 +256,7 @@ defaultContentLanguageInSubdir = false
     icon = "linkedin"
     icon_pack = "fa"
     link = "https://www.linkedin.com/in/thea-knowles-70700b68/"
-    
+
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
