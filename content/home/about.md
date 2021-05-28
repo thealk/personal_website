@@ -27,6 +27,9 @@ weight = 1
   year = 2012
  
 +++
+<meta http-equiv="refresh" content="0; url=https://bookdown.org/thea_knowles/casa_coding_group/"> 
+
+Please wait while this page redirects to [my new website](www.casa-lab.com).
 
 # About me
 
